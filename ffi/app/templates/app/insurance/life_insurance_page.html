@@ -1,0 +1,259 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Insurance - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Insurance Solutions For You</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+              Choosing the right type of life insurance depends on your unique needs and financial goals.
+              Here’s an overview of the options we offer:
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+
+          <h2 class="ins-intro__headline">
+            When it comes to <span class="u-underline">life insurance</span>, you have options.
+          </h2>
+        </div>
+      </section>
+      <!-- ========== Detailed sections (split layout) ========== -->
+      <section id="whole-life" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card">
+              <h3 class="fs-title">Whole Life Insurance</h3>
+              <p class="fs-body">
+                Whole life insurance offers lifelong coverage with fixed premiums and builds cash value over time, making it an excellent choice for those who want lasting financial security and a guaranteed death benefit.
+              </p>
+              <a href="/insurance/life-insurance/whole-life-insurance" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="wl-photos">
+                <figure class="wl-photo wl-photo--d">
+                  <img src="{% static 'images/life_incurance_pic.png' %}" alt="Family moment">
+                </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="universal-life" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row fs-row--invert">
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--j">
+                <img src="{% static 'images/universal_life_insurance_pic.png' %}" alt="Family moment">
+              </figure>
+            </div>
+            <div class="fs-card fs-card--pull-left">
+              <h3 class="fs-title">Universal Life Insurance</h3>
+              <p class="fs-body">
+                Universal life insurance combines lifetime coverage with flexible premiums and death benefits, making it suitable for individuals who want lifelong protection with the flexibility to adjust their policy as their financial needs evolve.
+              </p>
+              <a href="/insurance/life-insurance/universal-life-insurance" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="term-life" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card">
+              <h3 class="fs-title">Term Life Insurance</h3>
+              <p class="fs-body">
+                Simple and affordable, term life insurance provides coverage for a specified period (such as 10, 20, or 30 years), making it ideal for temporary needs like income replacement or mortgage protection.
+              </p>
+              <a href="/insurance/life-insurance/term-life-insurance" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--e">
+                <img src="{% static 'images/term_life_insurance_pic.png' %}" alt="Family moment">
+              </figure>
+            </div>
+
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== Benefits carousel (life insurance overall) ========== -->
+      <section class="benefits-band reveal" data-anim="up" data-duration="900" aria-label="Benefits of life insurance">
+        <div class="benefits-wrap">
+          <header class="benefits-head">
+            <h2 class="benefits-title">Why life insurance?</h2>
+            <p class="benefits-sub">It’s more than protection. It’s a plan for confidence and continuity.</p>
+          </header>
+
+          <div class="benefits-carousel" role="region" aria-roledescription="carousel" aria-label="Life insurance benefits">
+            <div class="benefits-track">
+              <article class="benefit">
+                <h3 class="benefit__title">Income protection</h3>
+                <p class="benefit__text">Replaces lost income so your family’s lifestyle stays on track.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Debt & mortgage coverage</h3>
+                <p class="benefit__text">Protects the home and clears debts when life takes a turn.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Tax-efficient legacy</h3>
+                <p class="benefit__text">Creates a tax-advantaged transfer of wealth to loved ones or causes.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Business continuity</h3>
+                <p class="benefit__text">Provide buy-sell funding and key-person protection for your business.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Cash value access</h3>
+                <p class="benefit__text">Permanent policies can build value you may access for opportunities.</p>
+              </article>
+            </div>
+
+            <div class="benefits-controls">
+              <button class="benefits-prev" type="button" aria-label="Previous">‹</button>
+              <div class="benefits-dots" role="tablist" aria-label="Slide dots"></div>
+              <button class="benefits-next" type="button" aria-label="Next">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Tiny comparison table ========== -->
+      <section class="ins-compare reveal" data-anim="up" data-duration="900">
+        <div class="compare-wrap">
+          <h3 class="compare-title">Quick comparison</h3>
+          <div class="compare-table" role="table" aria-label="Life insurance comparison">
+            <div class="compare-row compare-row--head" role="row">
+              <div role="columnheader"></div>
+              <div role="columnheader">Whole Life</div>
+              <div role="columnheader">Universal Life</div>
+              <div role="columnheader">Term Life</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="rowheader">Coverage length</div>
+              <div role="cell">Lifetime</div>
+              <div role="cell">Lifetime</div>
+              <div role="cell">10–30 years</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="rowheader">Premiums</div>
+              <div role="cell">Fixed</div>
+              <div role="cell">Flexible</div>
+              <div role="cell">Lowest initial</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="rowheader">Cash value</div>
+              <div role="cell">Guaranteed</div>
+              <div role="cell">Market-linked</div>
+              <div role="cell">None</div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="rowheader">Typical use</div>
+              <div role="cell">Legacy / estate</div>
+              <div role="cell">Flexible planning</div>
+              <div role="cell">Budget protection</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CTA ========== -->
+      <section class="ins-cta reveal" data-anim="up" data-duration="900">
+        <div class="ins-cta__wrap">
+          <h3 class="ins-cta__title">Let’s tailor protection that fits your future.</h3>
+          <a href="/contact-us/" class="btn-outline">Speak to an advisor</a>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+
+  <script>
+  /* Scroll reveal with durations & delays */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+
+    els.forEach(el => {
+      const d  = el.getAttribute('data-delay');
+      const du = el.getAttribute('data-duration');
+      if (d)  el.style.setProperty('--rv-delay', `${parseInt(d,10)}ms`);
+      if (du) el.style.setProperty('--rv-dur',   `${parseInt(du,10)}ms`);
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(({ isIntersecting, target }) => {
+        if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
+
+    els.forEach(el => io.observe(el));
+  })();
+</script>
+
+<script>
+(function(){
+  const root  = document.querySelector('.benefits-carousel');
+  if(!root) return;
+  const track = root.querySelector('.benefits-track');
+  const prev  = root.querySelector('.benefits-prev');
+  const next  = root.querySelector('.benefits-next');
+  const dotsWrap = root.querySelector('.benefits-dots');
+
+  function pageCount(){
+    return Math.max(1, Math.ceil(track.scrollWidth / root.clientWidth));
+  }
+  function currentPage(){
+    return Math.round(track.scrollLeft / root.clientWidth);
+  }
+  function goTo(page){
+    track.scrollTo({ left: page * root.clientWidth, behavior: 'smooth' });
+  }
+  function buildDots(){
+    dotsWrap.innerHTML = '';
+    const n = pageCount();
+    for(let i=0;i<n;i++){
+      const b = document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label',`Go to slide ${i+1}`);
+      b.setAttribute('aria-selected', i===0 ? 'true' : 'false');
+      b.addEventListener('click', ()=>goTo(i));
+      dotsWrap.appendChild(b);
+    }
+  }
+  function updateDots(){
+    const dots = dotsWrap.querySelectorAll('button');
+    const i = currentPage();
+    dots.forEach((d,k)=>d.setAttribute('aria-selected', k===i ? 'true' : 'false'));
+  }
+
+  prev.addEventListener('click', ()=>goTo(Math.max(0, currentPage()-1)));
+  next.addEventListener('click', ()=>goTo(Math.min(pageCount()-1, currentPage()+1)));
+  track.addEventListener('scroll', ()=>{ requestAnimationFrame(updateDots); });
+  window.addEventListener('resize', ()=>{ buildDots(); updateDots(); });
+
+  buildDots(); updateDots();
+})();
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,355 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Registered Investments - Family First{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Registered Investments</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+
+    <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+      <div class="ins-intro__wrap">
+        <div class="ins-intro__copy">
+          <p>
+            Registered accounts help Canadians grow savings with powerful tax features.
+            We’ll help you decide <em>which account</em> to use and <em>what to hold</em> inside it
+            (ETFs, funds, GIC ladders, or a mix) so the plan is simple and sustainable.
+          </p>
+        </div>
+
+        <div class="ins-intro__rule" aria-hidden="true"></div>
+          <h2 class="ins-intro__headline">
+            Build <span class="u-underline">tax-smart</span> wealth.<br>
+            Invest with <span class="u-underline">clarity</span>.
+          </h2>
+      </div>
+    </section>
+
+      <!-- RRSP -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="RRSP overview" id="rrsp">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">RRSP — Registered Retirement Savings Plan</h3>
+                <p class="wl-a">
+                  Designed for retirement. Contributions may reduce taxable income, and investments grow tax-deferred until withdrawal.
+                </p>
+
+                <h3 class="wl-q">Why it’s useful</h3>
+                <p class="wl-a">
+                  Spousal RRSPs can support income-splitting later. Programs like the Home Buyers’ Plan (HBP) and Lifelong Learning Plan (LLP)
+                  allow temporary withdrawals under specific rules.
+                </p>
+
+                <h3 class="wl-q">Good fit</h3>
+                <p class="wl-a">
+                  Higher earners today expecting a lower tax bracket in retirement; anyone building long-term retirement capital.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="RRSP image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/invest_rrsp.png' %}" alt="RRSP planning">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- TFSA -->
+      <section class="wl-plain" aria-label="TFSA overview" id="tfsa">
+        <div class="container">
+          <div class="wl-split">
+            <aside class="wl-right" aria-label="TFSA image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--f">
+                  <img src="{% static 'images/invest_tfsa.png' %}" alt="TFSA investing">
+                </figure>
+              </div>
+            </aside>
+
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">TFSA — Tax-Free Savings Account</h3>
+                <p class="wl-a">
+                  Flexible, powerful, and tax-free. Growth and withdrawals don’t create taxable income (rules apply).
+                </p>
+
+                <h3 class="wl-q">Why it’s useful</h3>
+                <p class="wl-a">
+                  Room accumulates annually. Withdrawals restore room the following year, making TFSA ideal for many goals and for managing taxable income in retirement.
+                </p>
+
+                <h3 class="wl-q">Good fit</h3>
+                <p class="wl-a">
+                  All savers. Especially helpful for variable income or when you expect to be in a higher bracket later.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FHSA -->
+      <section class="wl-plain" aria-label="FHSA overview" id="fhsa">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">FHSA — First Home Savings Account</h3>
+                <p class="wl-a">
+                  Hybrid of RRSP and TFSA for first-time buyers: contributions may be deductible and qualifying withdrawals are tax-free for a first home.
+                </p>
+
+                <h3 class="wl-q">Why it’s useful</h3>
+                <p class="wl-a">
+                  Can be combined with the RRSP Home Buyers’ Plan. If unused, eligible transfers to RRSP may be possible without affecting RRSP room.
+                </p>
+
+                <h3 class="wl-q">Good fit</h3>
+                <p class="wl-a">
+                  Eligible first-time buyers who want to accelerate a down payment with dual tax advantages.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="FHSA image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/invest_fhsa.png' %}" alt="FHSA overview">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESP -->
+      <section class="wl-plain" aria-label="RESP overview" id="resp">
+        <div class="container">
+          <div class="wl-split">
+            <aside class="wl-right" aria-label="RESP image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--f">
+                  <img src="{% static 'images/invest_resp.png' %}" alt="RESP savings">
+                </figure>
+              </div>
+            </aside>
+
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">RESP — Registered Education Savings Plan</h3>
+                <p class="wl-a">
+                  Education-focused saving with government grants (CESG). Growth is tax-deferred; students often withdraw at lower tax rates.
+                </p>
+
+                <h3 class="wl-q">Why it’s useful</h3>
+                <p class="wl-a">
+                  Family or individual plans, flexible beneficiaries, and structured educational assistance payments (EAP) when studies begin.
+                </p>
+
+                <h3 class="wl-q">Good fit</h3>
+                <p class="wl-a">
+                  Parents and grandparents funding future education while leveraging grants.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Benefits Carousel ============== -->
+  <section class="carousel-band" aria-label="Key benefits of registered investments">
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key Benefits of</span><br>
+        <span class="cool">Registered Investments</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        Registered plans can provide tax-deferred growth, tax-free withdrawals in some cases, and—in plans like RESP—government grants.
+        Here’s how that helps your money work harder.
+      </p>
+    </div>
+
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Registered investment benefits">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+          <!-- Slide 1 -->
+          <section class="ffi-slide" role="group" aria-label="1 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">01</span><span class="ffi-badge-text">Tax Advantage</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Lower tax now or later</h3>
+              <p class="ffi-slide__body">RRSP/FHSA contributions may reduce taxable income; TFSA withdrawals are tax-free; RESP growth is taxed to the student.</p>
+            </div>
+          </section>
+
+          <!-- Slide 2 -->
+          <section class="ffi-slide" role="group" aria-label="2 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">02</span><span class="ffi-badge-text">Compounding</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Sheltered growth</h3>
+              <p class="ffi-slide__body">Tax deferral or tax-free status lets compounding work without annual tax drag on interest, dividends, and gains.</p>
+            </div>
+          </section>
+
+          <!-- Slide 3 -->
+          <section class="ffi-slide" role="group" aria-label="3 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">03</span><span class="ffi-badge-text">Flexibility</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">The right tool for the goal</h3>
+              <p class="ffi-slide__body">Pick FHSA for first home, RESP for education, TFSA for flexible goals, and RRSP for retirement income planning.</p>
+            </div>
+          </section>
+
+          <!-- Slide 4 -->
+          <section class="ffi-slide" role="group" aria-label="4 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">04</span><span class="ffi-badge-text">Portfolio Choice</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Invest your way</h3>
+              <p class="ffi-slide__body">Hold diversified ETFs, mutual funds, bonds, or GIC ladders with automatic contributions and periodic rebalancing.</p>
+            </div>
+          </section>
+
+          <!-- Slide 5 -->
+          <section class="ffi-slide" role="group" aria-label="5 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">05</span><span class="ffi-badge-text">Grants</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">RESP government support</h3>
+              <p class="ffi-slide__body">RESPs may receive CESG grants that boost contributions toward education goals.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Registered investing FAQs" id="faq">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>Registered vs. non-registered — what’s the difference?</summary>
+          <div>Registered accounts offer tax advantages (tax-deferred or tax-free); non-registered accounts do not but have fewer withdrawal rules.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Which account should I use first?</summary>
+          <div>Common order: emergency fund → FHSA (if eligible) → TFSA/RRSP mix based on your bracket → RESP for kids. We’ll tailor it to you.</div>
+        </details>
+
+        <details class="faq">
+          <summary>What can I invest in?</summary>
+          <div>Diversified ETFs/funds, GIC ladders, and quality bonds are typical. We design to your horizon and risk capacity, then rebalance.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Are there withdrawal rules?</summary>
+          <div>Yes—TFSAs are generally tax-free; RRSPs are taxable; RESP withdrawals follow EAP/ROE rules; FHSA has qualifying home rules. Ask us before moving funds.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Build your registered plan</span></h2>
+          <p class="advisor-cta__sub">Get a clear roadmap and a tax-smart portfolio for your goals.</p>
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <!-- Carousel JS (unchanged) -->
+  <script>
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;
+      root.dataset.init = '1';
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => { dots = normalizeDots(); updateAria(); });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

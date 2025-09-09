@@ -1,0 +1,303 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Investments - Family First{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Investments Made Easy</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Investments intro">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+              Whether you’re building wealth, saving for retirement, or investing on behalf of your company,
+              we help you choose the right accounts and vehicles — registered or non-registered — and craft
+              a diversified, tax-efficient strategy you can stick with.
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+
+          <h2 class="ins-intro__headline">
+            <span class="u-underline">Invest</span> today <br>
+            <span class="u-underline">Shape your</span> future
+          </h2>
+
+          <h2 class="ins-intro__headline">
+            Investments for <span class="u-underline">Individuals</span> &amp; <span class="u-underline">Families</span>
+          </h2>
+        </div>
+      </section>
+
+      <!-- Individuals: Registered Accounts -->
+      <section id="registered" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card">
+              <h3 class="fs-title">Registered Investments</h3>
+              <p class="fs-body">
+                Registered investments, such as RRSPs and TFSAs, provide tax-advantaged ways to save and build wealth for the future. These accounts offer structured solutions for individuals to accumulate wealth while reducing their tax burden. We’ll guide you through the process of choosing the right registered plans to help you meet your financial goals.
+              </p>
+              <a href="/investments/registered-investments" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--d">
+                <img src="{% static 'images/reg-investments.png' %}" alt="Registered accounts overview">
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Individuals: Non-Registered Accounts -->
+      <section id="non-registered" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row fs-row--invert">
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--a">
+                <img src="{% static 'images/non-reg-investments-1.png' %}" alt="Non-registered investing">
+              </figure>
+            </div>
+            <div class="fs-card fs-card--pull-left">
+              <h3 class="fs-title">Non-Registered Investments</h3>
+              <p class="fs-body">
+                Non-registered investments offer flexibility for individuals who want to grow their wealth without the limitations of registered accounts. These options provide diverse asset allocation opportunities, allowing for strategic investments across various markets with accessible returns.
+              </p>
+              <a href="/investments/non-registered-investments" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Corporations Header -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Corporate investments">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            Investments for <span class="u-underline">Corporations</span>
+          </h2>
+        </div>
+      </section>
+
+      <!-- Corporations: Corporate Investing -->
+      <section id="corporate-investing" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card">
+              <h3 class="fs-title">Corporate Investment Strategies</h3>
+              <p class="fs-body">
+              Corporate investment strategies, such as corporate-owned whole life plans and corporate-insured retirement plans, are powerful tools for business owners looking to enhance their financial security. These strategies offer opportunities to optimize tax efficiency and build long-term wealth while also providing key employee benefits.
+              </p>
+              <a href="/investments/corporate-investments" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--e">
+                <img src="{% static 'images/corp-investments-1.png' %}" alt="Corporate investing">
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Corporations: Group Plans -->
+      <section id="group-plans" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row fs-row--invert">
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--i">
+                <img src="{% static 'images/group-rrsp-investments-1.png' %}" alt="Group RRSP and DPSP">
+              </figure>
+            </div>
+            <div class="fs-card fs-card--pull-left">
+              <h3 class="fs-title">Group RRSPs</h3>
+              <p class="fs-body">
+              Group RRSPs allow businesses to offer their employees a valuable retirement savings option. Not only does this foster a motivated and loyal workforce, but it also provides tax advantages for both the employer and employees. A Group RRSP plan can help your team plan for a secure future while allowing you to reap the rewards of offering a competitive benefit.
+              </p>
+              <a href="/investments/rrsp-investments" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- NEW: Our Process (nice added section) -->
+      <section id="process" class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="How we invest">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            A Simple, Disciplined <span class="u-underline">Investment Process</span>
+          </h2>
+        </div>
+      </section>
+
+      <!-- Why invest with us? (Carousel repurposed) -->
+      <section class="benefits-band reveal" data-anim="up" data-duration="900" aria-label="Why invest with us">
+        <div class="benefits-wrap">
+          <header class="benefits-head">
+            <h2 class="benefits-title">Why invest with us?</h2>
+            <p class="benefits-sub">Clarity, discipline, and tax-smart strategies — for people and for businesses.</p>
+          </header>
+
+          <div class="benefits-carousel" role="region" aria-roledescription="carousel" aria-label="Investment advantages">
+            <div class="benefits-track">
+              <article class="benefit">
+                <h3 class="benefit__title">Goal-based portfolios</h3>
+                <p class="benefit__text">We align investments to specific timelines — emergency fund, home, retirement, corporate cash.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Diversification first</h3>
+                <p class="benefit__text">Broad market exposure across geographies and asset classes to smooth the ride.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Low fees</h3>
+                <p class="benefit__text">Emphasis on low-cost ETFs and institutional-class funds where they add value.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Tax efficiency</h3>
+                <p class="benefit__text">Account location and rebalancing policies designed to minimize tax drag.</p>
+              </article>
+              <article class="benefit">
+                <h3 class="benefit__title">Ongoing advice</h3>
+                <p class="benefit__text">Regular reviews, clear reporting, and adjustments as your life or business evolves.</p>
+              </article>
+            </div>
+
+            <div class="benefits-controls">
+              <button class="benefits-prev" type="button" aria-label="Previous">‹</button>
+              <div class="benefits-dots" role="tablist" aria-label="Slide dots"></div>
+              <button class="benefits-next" type="button" aria-label="Next">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (Investing) -->
+      <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Investing FAQs">
+        <div class="container">
+          <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+          <details class="faq">
+            <summary>Which account should I use first?</summary>
+            <div>
+              It depends on your tax bracket and goal timing. Common order: emergency fund (HISA) → FHSA (if eligible) → RRSP/TFSA
+              mix → RESP for kids → non-registered once registered room is used.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>How are investments taxed in Canada?</summary>
+            <div>
+              RRSPs are tax-deferred; withdrawals are taxable. TFSAs are tax-free. Non-registered accounts incur tax on interest,
+              eligible dividends, and capital gains. We structure portfolios to reduce tax drag where possible.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Are my assets safe?</summary>
+            <div>
+              We use custodians that provide account safeguards (e.g., CIPF/CDIC eligibility where applicable). You retain
+              account ownership; we provide advice and management.
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>What are your fees?</summary>
+            <div>
+              Transparent advisory pricing with no lock-ins. We favor low-cost ETFs and institutional funds to keep total
+              costs competitive. We’ll show a clear breakdown before you commit.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+        <div class="container">
+          <div class="advisor-cta">
+            <h2 class="advisor-cta__title"><span class="u-underline">Still have questions?</span></h2>
+            <p class="advisor-cta__sub">Book a quick call to map the right accounts and an investment mix for your goals.</p>
+
+            <div class="advisor-cta__actions">
+              <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- existing JS (unchanged) -->
+  <script>
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+
+    els.forEach(el => {
+      const d  = el.getAttribute('data-delay');
+      const du = el.getAttribute('data-duration');
+      if (d)  el.style.setProperty('--rv-delay', `${parseInt(d,10)}ms`);
+      if (du) el.style.setProperty('--rv-dur',   `${parseInt(du,10)}ms`);
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(({ isIntersecting, target }) => {
+        if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
+
+    els.forEach(el => io.observe(el));
+  })();
+  </script>
+
+  <script>
+  (function(){
+    const root  = document.querySelector('.benefits-carousel');
+    if(!root) return;
+    const track = root.querySelector('.benefits-track');
+    const prev  = root.querySelector('.benefits-prev');
+    const next  = root.querySelector('.benefits-next');
+    const dotsWrap = root.querySelector('.benefits-dots');
+
+    function pageCount(){ return Math.max(1, Math.ceil(track.scrollWidth / root.clientWidth)); }
+    function currentPage(){ return Math.round(track.scrollLeft / root.clientWidth); }
+    function goTo(page){ track.scrollTo({ left: page * root.clientWidth, behavior: 'smooth' }); }
+    function buildDots(){
+      dotsWrap.innerHTML = '';
+      const n = pageCount();
+      for(let i=0;i<n;i++){
+        const b = document.createElement('button');
+        b.type='button';
+        b.setAttribute('aria-label',`Go to slide ${i+1}`);
+        b.setAttribute('aria-selected', i===0 ? 'true' : 'false');
+        b.addEventListener('click', ()=>goTo(i));
+        dotsWrap.appendChild(b);
+      }
+    }
+    function updateDots(){
+      const dots = dotsWrap.querySelectorAll('button');
+      const i = currentPage();
+      dots.forEach((d,k)=>d.setAttribute('aria-selected', k===i ? 'true' : 'false'));
+    }
+
+    prev.addEventListener('click', ()=>goTo(Math.max(0, currentPage()-1)));
+    next.addEventListener('click', ()=>goTo(Math.min(pageCount()-1, currentPage()+1)));
+    track.addEventListener('scroll', ()=>{ requestAnimationFrame(updateDots); });
+    window.addEventListener('resize', ()=>{ buildDots(); updateDots(); });
+
+    buildDots(); updateDots();
+  })();
+  </script>
+
+{% endblock %}

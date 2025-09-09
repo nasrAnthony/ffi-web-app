@@ -1,0 +1,304 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Group RRSP - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Group RRSP</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Top intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Group RRSP intro">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            Attract &amp; keep <span class="u-underline">top talent</span>—<br>
+            strengthen your <span class="u-underline">bottom line</span>.
+          </h2>
+        </div>
+      </section>
+
+      <!-- Overview: left copy + right photo cluster (optional images kept) -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="Group RRSP overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What is a Group RRSP?</h3>
+                <p class="wl-a">
+                  A Group RRSP is a workplace retirement savings plan. Employees contribute through payroll
+                  deductions (which count toward their personal RRSP limits) and investments grow tax-deferred.
+                  Employers can add a matching contribution that’s tax-deductible to the business.
+                </p>
+
+                <h3 class="wl-q">How it helps your company</h3>
+                <p class="wl-a">
+                  A clear retirement program improves hiring and retention, simplifies saving for your team, and
+                  lets you offer a competitive total-rewards package with transparent costs and administration.
+                </p>
+
+                <h3 class="wl-q">Who it’s right for</h3>
+                <p class="wl-a">
+                  Employers who want a simple, high-impact benefit; growing teams that value automatic savings
+                  and optional employer matching; organizations replacing or complementing an existing plan.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Related visuals">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/invest_tfsa.png' %}" alt="Workplace planning (optional)">
+                </figure>
+                <figure class="wl-photo wl-photo--b">
+                  <img src="{% static 'images/tl-1.png' %}" alt="Employee saving (optional)">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Features Carousel ============== -->
+  <section class="carousel-band" aria-label="Key features of a Group RRSP">
+    <!-- Header block -->
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key features of a</span><br>
+        <span class="cool">Group RRSP</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        A well-designed Group RRSP creates a win-win: employees save automatically with tax advantages,
+        and employers deliver a competitive benefit with clear, controllable costs.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Group RRSP key features">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <section class="ffi-slide" role="group" aria-label="1 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Payroll Deductions</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Automatic, consistent savings</h3>
+                <p class="ffi-slide__body">
+                  Contributions come off each paycheque, making saving easy and building momentum without extra steps.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="ffi-slide" role="group" aria-label="2 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Employer Matching</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Flexible, deductible support</h3>
+                <p class="ffi-slide__body">
+                  You set the match formula. Employer contributions are generally deductible and boost retention.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="ffi-slide" role="group" aria-label="3 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Tax Advantages</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Save smarter, grow tax-deferred</h3>
+                <p class="ffi-slide__body">
+                  Employee RRSP contributions reduce taxable income; investment growth compounds tax-deferred.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="ffi-slide" role="group" aria-label="4 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">04</span>
+                <span class="ffi-badge-text">Low-Cost Lineup</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Group pricing & guidance</h3>
+                <p class="ffi-slide__body">
+                  Access diversified, lower-fee options with default portfolios and ongoing education.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="ffi-slide" role="group" aria-label="5 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">05</span>
+                <span class="ffi-badge-text">Portability & Design</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Built for real-world teams</h3>
+                <p class="ffi-slide__body">
+                  Employees keep savings if they move on (via transfer). Pair with a DPSP if you need vesting on employer dollars.
+                </p>
+              </div>
+            </section>
+
+        </div>
+      </div>
+
+      <!-- Controls (dots are built in JS; keep container empty) -->
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Group RRSP FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>How do payroll contributions work?</summary>
+          <div>Employees choose a rate; payroll deducts each period and remits to their Group RRSP account automatically.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Are employer matches deductible?</summary>
+          <div>Yes—employer contributions are generally a deductible business expense and follow the employee’s RRSP limits.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Do employer dollars vest?</summary>
+          <div>Group RRSP money belongs to the employee right away. If you want vesting, pair the plan with a DPSP for the employer portion.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Can employees withdraw while employed?</summary>
+          <div>RRSP withdrawals are taxable and may be restricted by plan rules to encourage long-term saving. Exceptions include HBP/LLP under CRA rules.</div>
+        </details>
+
+        <details class="faq">
+          <summary>What happens when someone leaves?</summary>
+          <div>They typically transfer their balance to an individual RRSP or another eligible plan and continue investing independently.</div>
+        </details>
+
+        <details class="faq">
+          <summary>What do employees invest in?</summary>
+          <div>A curated, diversified lineup (index/balanced/target-date). We set sensible defaults and provide education.</div>
+        </details>
+
+        <details class="faq">
+          <summary>How much admin is required?</summary>
+          <div>We handle setup, onboarding, and provider coordination. Payroll sends deductions; the recordkeeper issues statements and tax slips.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Set up your Group RRSP</span></h2>
+          <p class="advisor-cta__sub">Plan design, payroll integration, and employee education—done right.</p>
+
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <script>
+    // Carousel controller (re-uses your existing script & markup)
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;   // prevent double init
+      root.dataset.init = '1';
+
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => { dots = normalizeDots(); updateAria(); });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

@@ -1,0 +1,372 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Insurance - Family First Insurance{% endblock %}
+
+{% block content %}
+
+
+  <div class="hero-content">
+    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Insurance You Can Trust</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      We help you build coverage for your peace of mind.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+<main class="page-insurance">
+
+  <!-- HERO (keep gradient) -->
+  <section class="ins-hero reveal" data-anim="up" data-duration="900">
+    <div class="container">
+      <h1 class="hero-title">
+        Insurance & investment solutions <span class="u-underline">tailored for you</span>.
+      </h1>
+      <p class="hero-sub">
+        Clear guidance, transparent costs, and plans that adapt as your life changes.
+      </p>
+      <div class="hero-ctas">
+        <a href="/contact-us/" class="btn-outline btn-outline--light">SPEAK TO AN ADVISOR</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY CARDS (white) -->
+  <section class="ins-cats reveal" data-anim="up" data-duration="900" aria-label="Insurance categories">
+    <div class="container">
+        <h2 class="section-title"><span class="u-underline">Explore</span></h2>
+      <div class="ins-grid">
+        <article class="ins-card ins-card--media">
+        <figure class="ins-card__media">
+            <img src="{% static 'images/insurance_father_son.png' %}" alt="Smiling multi-generation family" loading="lazy" decoding="async">
+        </figure>
+        <div class="ins-card__body">
+            <h3 class="ins-card__title">Life Insurance</h3>
+            <ul class="ins-card__list">
+            <li>Protect income & mortgages</li>
+            <li>Plan a tax-smart legacy</li>
+            <li>Term, Whole, Universal</li>
+            </ul>
+            <a class="ins-card__link" href="/insurance/life-insurance">LEARN MORE ›</a>
+        </div>
+        </article>
+
+        <!-- Disability & CI -->
+        <article class="ins-card ins-card--media">
+        <figure class="ins-card__media">
+            <img src="{% static 'images/insurance_life.png' %}" alt="Person reviewing finances with a healthcare professional" loading="lazy" decoding="async">
+        </figure>
+        <div class="ins-card__body">
+            <h3 class="ins-card__title">Disability & Critical Illness</h3>
+            <ul class="ins-card__list">
+            <li>Replace income during illness</li>
+            <li>Lump-sum for recovery costs</li>
+            <li>Pair with employer benefits</li>
+            </ul>
+            <a class="ins-card__link" href="/insurance/disability-critical-illness">LEARN MORE ›</a>
+        </div>
+        </article>
+
+        <!-- Business -->
+        <article class="ins-card ins-card--media">
+        <figure class="ins-card__media">
+            <img src="{% static 'images/business_insurance.png' %}" alt="Business partners meeting in office" loading="lazy" decoding="async">
+        </figure>
+        <div class="ins-card__body">
+            <h3 class="ins-card__title">Corporate Insurance</h3>
+            <ul class="ins-card__list">
+            <li>Key-person & buy-sell funding</li>
+            <li>Protect cash flow & partners</li>
+            <li>Tax-efficient strategies</li>
+            </ul>
+            <a class="ins-card__link" href="/insurance/business-insurance">LEARN MORE ›</a>
+        </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+<section class="ins-compare classic reveal" data-anim="up" data-duration="900" aria-label="Insurance comparison">
+  <div class="container">
+    <h2 class="section-title"><span class="u-underline">Compare at a glance</span></h2>
+
+    <div class="cmp-classic-scroll">
+      <table class="cmp-classic" aria-describedby="cmp-classic-note">
+        <thead>
+          <tr>
+            <th scope="col" class="rowhead">Insurance Types</th>
+            <th scope="col">
+              <div class="col-head">
+                <span class="col-title">Whole Life</span>
+                <span class="col-sub">Lifetime coverage<br>and cash value</span>
+              </div>
+            </th>
+            <th scope="col">
+              <div class="col-head">
+                <span class="col-title">Universal Life</span>
+                <span class="col-sub">Lifetime coverage for<br>specific needs</span>
+              </div>
+            </th>
+            <th scope="col">
+              <div class="col-head">
+                <span class="col-title">Term Life</span>
+                <span class="col-sub">Temporary coverage for<br>a set timeframe</span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Coverage duration</th>
+            <td>Lifetime</td>
+            <td>Lifetime</td>
+            <td>Specified term</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Premium structure</th>
+            <td>Fixed</td>
+            <td>Flexible</td>
+            <td>Fixed for term</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Cash value accumulation</th>
+            <td class="yes"><span class="sr-only">Yes</span></td>
+            <td class="yes"><span class="sr-only">Yes</span></td>
+            <td class="no"><span class="sr-only">No</span></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Death benefit</th>
+            <td>Guaranteed</td>
+            <td>Flexible</td>
+            <td>Guaranteed for term</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Dividends</th>
+            <td class="yes"><span class="sr-only">Possible</span></td>
+            <td class="no"><span class="sr-only">Not applicable</span></td>
+            <td class="no"><span class="sr-only">Not applicable</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<section class="how-works-vertical reveal" data-anim="up" data-duration="900" aria-label="How we work">
+  <div class="container">
+    <h2 class="section-title"><span class="u-underline">What sets us apart</span></h2>
+
+    <div class="hwwv">
+      <!-- Vertical curved path -->
+      <svg class="hwwv-svg" viewBox="0 0 600 900" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <linearGradient id="hwwv-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"  stop-color="#6aa1dc"/>
+            <stop offset="100%" stop-color="#102B49"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Light track -->
+        <path id="hwwv-track"
+              d="M300,70
+                 C 520,140 520,290 300,360
+                 S  80,630 300,700
+                 S 520,840 300,830"
+              fill="none" stroke="rgba(16,43,73,.14)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- Progress (animated) -->
+        <path id="hwwv-path"
+              d="M300,70
+                 C 520,140 520,290 300,360
+                 S  80,630 300,700
+                 S 520,840 300,830"
+              fill="none" stroke="url(#hwwv-grad)" stroke-width="6" stroke-linecap="round"
+              pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+      </svg>
+
+      <!-- Steps: data-frac = 0 (top) → 1 (bottom); data-side chooses which side the card sits -->
+        <article class="hwwv-node is-active" data-frac="0.05" data-side="left">
+        <div class="hwwv-card">
+            <div class="hwwv-badge">1</div>
+            <h3 class="hwwv-title">We Design</h3>
+            <p class="hwwv-text">We map your goals, budget, timelines, and any existing coverage.</p>
+        </div>
+        </article>
+
+      <article class="hwwv-node" data-frac="0.45" data-side="right">
+        <div class="hwwv-card">
+          <div class="hwwv-badge">2</div>
+          <h3 class="hwwv-title">We Compare</h3>
+          <p class="hwwv-text">We compare carriers and craft clear options you can trust.</p>
+        </div>
+      </article>
+
+      <article class="hwwv-node" data-frac="0.86" data-side="left">
+        <div class="hwwv-card">
+          <div class="hwwv-badge">2</div>
+          <h3 class="hwwv-title">We Implement</h3>
+          <p class="hwwv-text">Fast applications, easy underwriting, and annual reviews.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY FAMILY FIRST (split layout with image) ===== -->
+<section class="why-fff reveal" data-anim="up" data-duration="900" aria-label="Why Family First">
+  <div class="container">
+    <div class="why-wrap">
+      <!-- Copy -->
+      <div class="why-copy">
+        <h2 class="section-title"><span class="u-underline">Why Family First?</span></h2>
+
+        <p class="why-lede">
+          We’re independent, planning-led advisors. That means our recommendations
+          start with <em>your</em> goals. You’ll get
+          clear pricing, plain-English guidance, and a strategy that balances protection
+          and growth as life evolves. 
+        </p>
+
+        <p class="why-lede">
+          We work with many of the most trusted insurance providers and investment firms in Canada,
+          so you can compare options side-by-side and choose with confidence.
+        </p>
+
+        <ul class="why-points">
+          <li>Independent advice across multiple top-rated carriers</li>
+          <li>Transparent quotes and options explained simply</li>
+          <li>Custom plans for families, professionals, and business owners</li>
+          <li>Annual policy checkups to keep coverage on track</li>
+        </ul>
+      </div>
+
+      <!-- Image -->
+      <figure class="why-media">
+        <img
+          src="{% static 'images/advice_pic.png' %}"
+          alt="Licensed advisor meeting with a family to review coverage options"
+          loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Talk to an advisor">
+  <div class="container">
+    <div class="advisor-cta">
+      <h2 class="advisor-cta__title"><span class="u-underline">Let’s talk.</span></h2>
+      <p class="advisor-cta__sub">Clear options. No pressure.</p>
+
+      <div class="advisor-cta__actions">
+        <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">SPEAK TO AN ADVISOR</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ (white) -->
+  <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Insurance FAQs">
+    <div class="container">
+      <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+      <details class="faq"><summary>How much coverage do I need?</summary><div>Many families target 7–10× annual income plus debts and future goals. We’ll tailor it to your budget.</div></details>
+      <details class="faq"><summary>Does term convert to permanent?</summary><div>Most term policies allow conversion to permanent coverage without medicals within a set window.</div></details>
+      <details class="faq"><summary>What affects my price?</summary><div>Age, health, coverage amount, term length, and riders. We compare carriers to find value.</div></details>
+    </div>
+  </section>
+
+</main>
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const svg   = document.querySelector('.hwwv-svg');
+  const path  = svg?.querySelector('#hwwv-path');   // progress stroke
+  const track = svg?.querySelector('#hwwv-track');  // geometry twin
+  const nodes = Array.from(document.querySelectorAll('.hwwv-node'));
+  const wrap  = document.querySelector('.hwwv');
+  if (!svg || !path || !track || !nodes.length) return;
+
+  // account for preserveAspectRatio="meet"
+  const vb = svg.viewBox.baseVal; // 0 0 600 900
+  function positionNodes(){
+    const rect = svg.getBoundingClientRect();
+    const s  = Math.min(rect.width / vb.width, rect.height / vb.height);
+    const offX = (rect.width  - vb.width  * s) / 2;
+    const offY = (rect.height - vb.height * s) / 2;
+    const L = track.getTotalLength();
+
+    nodes.forEach(n=>{
+      let f = (parseFloat(n.dataset.frac) || 0) % 1; if (f < 0) f += 1;
+      const p  = track.getPointAtLength(L * f);
+      const p2 = track.getPointAtLength(Math.min(L, L * (f + 0.001)));
+      const tx = p2.x - p.x, ty = p2.y - p.y;
+      const nx = -ty, ny = tx; const len = Math.hypot(nx, ny) || 1;
+      const ux = nx/len, uy = ny/len;
+
+      n.style.left = (offX + p.x * s) + 'px';
+      n.style.top  = (offY + p.y * s) + 'px';
+      n.style.setProperty('--nx', ux);
+      n.style.setProperty('--ny', uy);
+      n.style.setProperty('--side', (n.dataset.side === 'left') ? -1 : 1);
+
+      if (!n.hasAttribute('tabindex')) n.setAttribute('tabindex','0'); // keyboard focusable
+      n.setAttribute('role','button');
+      n.setAttribute('aria-label', n.querySelector('.hwwv-title')?.textContent?.trim() || 'Step');
+    });
+  }
+  positionNodes();
+  window.addEventListener('resize', positionNodes);
+
+  // progress control (hover/focus)
+  path.style.strokeDasharray = 1;
+  path.style.strokeDashoffset = 1;
+
+  function setActiveByFrac(frac){
+    const clamped = Math.max(0, Math.min(1, frac));
+    if (!reduce) path.style.transition = 'stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)';
+    path.style.strokeDashoffset = 1 - clamped;
+
+    // highlight closest node
+    let best = 0, bestDiff = Infinity;
+    nodes.forEach((n,i)=>{
+      const f = parseFloat(n.dataset.frac) || 0;
+      const d = Math.abs(f - clamped);
+      if (d < bestDiff){ bestDiff = d; best = i; }
+    });
+    nodes.forEach((n,i)=> n.classList.toggle('is-active', i === best));
+  }
+
+  // Hover & keyboard focus follow
+  nodes.forEach(n=>{
+    const go = ()=> setActiveByFrac(parseFloat(n.dataset.frac) || 0);
+    n.addEventListener('mouseenter', go);
+    n.addEventListener('focus', go);     // keyboard navigation
+    // keep click as a fallback if you wish:
+    // n.addEventListener('click', go);
+  });
+
+  // Reset to the first node when pointer leaves the zone
+  wrap.addEventListener('mouseleave', ()=>{
+    setActiveByFrac(parseFloat(nodes[0].dataset.frac) || 0);
+  });
+
+  // initial state
+  setActiveByFrac(parseFloat(nodes[0].dataset.frac) || 0);
+})();
+</script>
+
+
+
+{% endblock %}

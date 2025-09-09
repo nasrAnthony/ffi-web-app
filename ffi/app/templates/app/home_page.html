@@ -1,0 +1,309 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+
+{% block title %}Family First Insurance – Home{% endblock %}
+
+{% block content %}
+
+  <!-- ================= Hero ================= -->
+  <div class="hero-content">
+    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Creating Generational Wealth</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      Insurance &amp; Investments for peace of mind.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+<!-- ===== Keep the hero as the page background for this band ===== -->
+<section class="after-hero-bg">
+  <div class="after-hero-surface">
+    <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+      <div class="ins-intro__wrap">
+        <div class="ins-intro__copy">
+          <p>
+            Make sure life’s big moments stay on track. Choose protection that grows with your family.
+          </p>
+        </div>
+
+        <div class="ins-intro__rule" aria-hidden="true"></div>
+        <h2 class="ins-intro__headline">
+          <span class="u-underline">Simple</span> choices.
+          <br> <span class="u-underline">Smart</span> coverage. <br> 
+          <span class="u-underline">Long-term</span> confidence.
+        </h2>
+      </div>
+    </section>
+  
+    <section class="brand-rail" aria-label="Trusted by our partners">
+      <div class="brand-rail__wrap">
+        <h2 class="brand-rail__title">
+          Our <span>Trusted Partners</span>
+        </h2>
+        <div class="brand-rail__viewport">
+          <ul class="brand-rail__track">
+            <li><img src="{% static 'images/logos/canadalife_logo.png' %}" alt="Canada Life"></li>
+            <li><img src="{% static 'images/logos/manu_logo.png' %}" alt="ManuLife"></li>
+            <li><img src="{% static 'images/logos/sunlife_logo.png' %}" alt="SunLife"></li>
+            <li><img src="{% static 'images/logos/rbc_logo.png' %}" alt="RBC"></li>
+            <li><img src="{% static 'images/logos/bmo_logo.png' %}" alt="BMO"></li>
+            <li><img src="{% static 'images/logos/empire_logo.png' %}" alt="Empire Life"></li>
+            <li><img src="{% static 'images/logos/ia_logo.png' %}" alt="Industrial Alliance"></li>
+            <li><img src="{% static 'images/logos/forester_logo.png' %}" alt="Forester Financial"></li>
+            <li><img src="{% static 'images/logos/equitable_logo.png' %}" alt="Equitable Life of Canada"></li>
+            <li><img src="{% static 'images/logos/cpp_logo.png' %}" alt="Canada Protection Plan"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-split feature-split--in-surface">
+      <div class="fs-wrap">
+
+        <div class="fs-head">
+          <h2 class="fs-heading">
+            Build your peace of mind.<br>
+            <span class="fs-highlight">Protect what matters to you.</span>
+          </h2>
+        </div>
+        <!-- ========== Detailed sections (split layout) ========== -->
+        <section id="whole-life" class="feature-split ins-split">
+          <div class="fs-wrap">
+            <article class="fs-row">
+              <div class="fs-card">
+                <h3 class="fs-title">Insurance</h3>
+                <p class="fs-body">
+                  Our personalized approach ensures that you receive the best coverage and support for your unique individual or business needs.
+                </p>
+                <a href="/insurance/" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+              </div>
+              <aside class="wl-right" aria-label="Related photos">
+                <div class="wl-photos">
+                  <figure class="wl-photo wl-photo--g">
+                    <img src="{% static 'images/duo-insurance.png' %}" alt="Family moment">
+                  </figure>
+                  <figure class="wl-photo wl-photo--h">
+                    <img src="{% static 'images/duo-investments-2.png' %}" alt="Planning at a desk">
+                  </figure>
+                </div>
+              </aside>
+            </article>
+          </div>
+        </section>
+        <section id="universal-life" class="feature-split ins-split">
+          <div class="fs-wrap">
+            <article class="fs-row fs-row--invert">
+            <div class="wl-photos">
+              <figure class="wl-photo wl-photo--i">
+                <img src="{% static 'images/duo-investments.png' %}" alt="Family moment">
+              </figure>
+              <figure class="wl-photo wl-photo--d">
+                <img src="{% static 'images/duo-investments-3.png' %}" alt="Planning at a desk">
+              </figure>
+            </div>
+              <div class="fs-card fs-card--pull-left">
+                <h3 class="fs-title">Investments</h3>
+                <p class="fs-body">
+                  We specialize in tailored strategies that align with your goals, whether it’s your personal or business finances.
+                </p>
+                <a href="/investments/" class="fs-link">LEARN MORE <span aria-hidden="true">›</span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="carousel-band reveal" data-duration="900">
+    <div class="ffi-carousel" aria-label="Highlights">
+
+      <!-- Carousel Title -->
+      <header class="carousel-header reveal" data-anim="up" data-duration="900">
+        <h2 class="carousel-title">Why Choose Us?</h2>
+        <p class="carousel-sub">
+          We make insurance and investments simple, guided, and tailored to you.
+        </p>
+      </header>
+
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+          <!-- Slide 1 -->
+          <article class="ffi-slide is-active">
+            <div class="ffi-slide__label">
+              <span class="ffi-badge-num">01</span>
+              <span class="ffi-badge-text">Guided</span>
+            </div>
+            <div class="ffi-slide__content">
+              <h2 class="ffi-slide__headline">Clear guidance for every decision.</h2>
+              <p class="ffi-slide__body">
+                We explain your options in plain language and map them to your goals,
+                so you can make confident, informed choices about insurance and investments.
+              </p>
+            </div>
+          </article>
+
+            <!-- Slide 2 -->
+            <article class="ffi-slide">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Covered</span>
+              </div>
+              <div class="ffi-slide__content">
+                <h2 class="ffi-slide__headline">While your needs change, we keep you covered.</h2>
+                <p class="ffi-slide__body">
+                  We proactively review your situation so coverage and investments stay
+                  optimized for every stage of life.
+                </p>
+              </div>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="ffi-slide">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Prepared</span>
+              </div>
+              <div class="ffi-slide__content">
+                <h2 class="ffi-slide__headline">Build for the future you want.</h2>
+                <p class="ffi-slide__body">
+                  From first policy to retirement planning, we align your strategy to milestones—
+                  family, business, and legacy.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- Controls -->
+        <div class="ffi-carousel__controls">
+          <button class="ffi-btn prev" aria-label="Previous slide" type="button">‹</button>
+          <div class="ffi-dots" role="tablist" aria-label="Carousel pagination"></div>
+          <button class="ffi-btn next" aria-label="Next slide" type="button">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact CTA (clean, single-column) ================= -->
+    <section class="contact-cta contact-cta--clean">
+      <div class="contact-cta__wrap">
+
+        <header class="contact-cta__intro reveal"
+                data-anim="up" data-duration="900">
+          <h2 class="contact-cta__title">CONTACT FORM</h2>
+        </header>
+
+        <!-- Form card -->
+        <div class="contact-cta__center reveal"
+             data-anim="up" data-delay="150" data-duration="900">
+
+          <form id="contact-form"
+                class="contact-form contact-form--card"
+                method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="form-grid">
+
+              <div class="form-row">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {% if form.name.errors %}
+                  <div class="text-danger small">{{ form.name.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="form-row">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                  <div class="text-danger small">{{ form.email.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="form-row">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+                <small id="phone-help" class="hint">
+                  Digits only, no spaces or dashes.
+                </small>
+                {% if form.phone.errors %}
+                  <div class="text-danger small">{{ form.phone.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="form-row">
+                <fieldset class="radio-fieldset">
+                  <legend>{{ form.preferred_contact.label }}</legend>
+                  <div class="form-radio-group">
+                    {{ form.preferred_contact }}
+                  </div>
+                  {% if form.preferred_contact.errors %}
+                    <div class="text-danger small">{{ form.preferred_contact.errors }}</div>
+                  {% endif %}
+                </fieldset>
+              </div>
+
+              <div class="form-row">
+                {{ form.topic.label_tag }}
+                {{ form.topic }}
+                {% if form.topic.errors %}
+                  <div class="text-danger small">{{ form.topic.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="form-row form-row--full">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+                {% if form.message.errors %}
+                  <div class="text-danger small">{{ form.message.errors }}</div>
+                {% endif %}
+              </div>
+
+              <div class="form-actions">
+                <button class="btn-outline" type="submit"
+                        aria-label="Send message">Send message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    const form  = document.getElementById('contact-form');
+    const phone = document.getElementById('cf-phone');
+    const DIGITS_ONLY = /\D/g;
+
+    if (phone) {
+      phone.addEventListener('input', (e) => {
+        const cleaned = e.target.value.replace(DIGITS_ONLY, '');
+        if (cleaned !== e.target.value) e.target.value = cleaned;
+        phone.setCustomValidity('');
+      });
+
+      phone.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = (e.clipboardData || window.clipboardData).getData('text') || '';
+        phone.value = text.replace(DIGITS_ONLY, '').slice(0, 15);
+      });
+
+      form.addEventListener('submit', (e) => {
+        if (!/^\d{10,15}$/.test(phone.value)) {
+          e.preventDefault();
+          phone.setCustomValidity('Please enter 10–15 digits (numbers only).');
+          phone.reportValidity();
+        }
+      });
+    }
+  })();
+</script>
+
+
+{% endblock %}

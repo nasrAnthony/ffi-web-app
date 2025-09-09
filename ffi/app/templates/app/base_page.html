@@ -1,0 +1,574 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+    <title>Family First Insurance</title>
+  </head>
+  <body>
+    {% if messages %}
+      <div class="flash-container" role="status" aria-live="polite">
+        {% for message in messages %}
+          <div class="flash flash-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="hero-section">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="{% url 'home' %}" class="logo-link">
+            <img class="logo" src="{% static 'images/ffi_logo_text.png' %}" alt="FFI LOGO" />
+          </a>
+
+          <!-- Mobile hamburger toggle (hidden on desktop via CSS) -->
+          <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle__bar"></span>
+          </button>
+
+          <!-- Main nav -->
+          <ul class="nav-links" id="primary-nav">
+            <!-- INSURANCE -->
+            <li class="nav-item has-dropdown">
+              <a
+                href="/insurance/"
+                class="nav-link"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="ins-dd"
+              >
+                INSURANCE <span class="caret" aria-hidden="true"></span>
+              </a>
+
+              <ul id="ins-dd" class="dropdown" role="menu">
+                <!-- Life Insurance (forced open) -->
+                <li class="has-submenu force-open">
+                  <a
+                    href="/insurance/life-insurance"
+                    class="submenu-toggle"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    aria-controls="life-sub"
+                  >
+                    Life Insurance
+                  </a>
+                  <ul id="life-sub" class="sub-menu" role="menu">
+                    <li><a href="/insurance/life-insurance/term-life-insurance">Term Life Insurance</a></li>
+                    <li><a href="/insurance/life-insurance/whole-life-insurance">Whole Life Insurance</a></li>
+                    <li><a href="/insurance/life-insurance/universal-life-insurance">Universal Life Insurance</a></li>
+                  </ul>
+                </li>
+
+                <li class="has-submenu force-open">
+                  <a
+                    class="submenu-toggle"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    aria-controls="life-sub"
+                  >
+                    Disability &amp; Critical Illness
+                  </a>
+                  <ul id="life-sub" class="sub-menu" role="menu">
+                    <li><a href="/insurance/critical-illness-insurance">Critical Life Insurance</a></li>
+                    <li><a href="/insurance/disability-insurance">Diability Insurance</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="/insurance/travel-insurance">Travel Insurance</a></li>
+
+                <li class="divider" role="separator"></li>
+
+                <li class="has-submenu force-open">
+                  <a
+                    class="submenu-toggle"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    aria-controls="life-sub"
+                  >
+                    Corporate Insurance
+                  </a>
+                  <ul id="life-sub" class="sub-menu" role="menu">
+                    <li><a href="/insurance/group-health-insurance">Group Health Insurance</a></li> 
+                    <li><a href="/insurance/partnership-insurance">Partnership Insurance</a></li>
+                    <li><a href="/insurance/key-person-insurance">Key Person Insurance</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- INVESTMENTS -->
+            <li class="nav-item has-dropdown">
+              <a
+                href="/investments/"
+                class="nav-link"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="inv-dd"
+              >
+                INVESTMENTS <span class="caret" aria-hidden="true"></span>
+              </a>
+
+              <ul id="inv-dd" class="dropdown" role="menu">
+                <li class="has-submenu force-open">
+                  <a
+                    class="submenu-toggle"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    aria-controls="inv-sub-personal"
+                  >
+                    Personal Investments
+                  </a>
+                  <ul id="inv-sub-personal" class="sub-menu" role="menu">
+                    <li><a href="/investments/registered-investments">Registered Investments</a></li>
+                    <li><a href="/investments/non-registered-investments">Non-Registered Investments</a></li>
+                  </ul>
+                </li>
+
+                <li class="has-submenu force-open">
+                  <a
+                    class="submenu-toggle"
+                    aria-haspopup="true"
+                    aria-expanded="true"
+                    aria-controls="inv-sub-business"
+                  >
+                    Business Investments
+                  </a>
+                  <ul id="inv-sub-business" class="sub-menu" role="menu">
+                    <li><a href="/investments/corporate-investments">Coroprate Investment Strategies</a></li>
+                    <li><a href="/investments/rrsp-investments">Group RRSP</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- RESOURCES -->
+            <li class="nav-item has-dropdown">
+              <a href="/resources/" class="nav-link" aria-haspopup="true" aria-expanded="false">
+                RESOURCES <span class="caret" aria-hidden="true"></span>
+              </a>
+              <ul class="dropdown" role="menu">
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </li>
+
+            <!-- WHO WE ARE -->
+            <li class="nav-item">
+              <a href="/about-us/" class="nav-link">WHO WE ARE</a>
+            </li>
+
+            <!-- CONTACT -->
+            <li class="nav-item">
+              <a href="/contact-us/" class="nav-link">CONTACT US</a>
+            </li>
+          </ul>
+
+          <div class="nav-actions"><!-- CTA/search placeholder --></div>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Left logo/brand -->
+        <div class="footer-brand">
+          <img src="{% static 'images/logo.png' %}" alt="Family First Insurance Logo" />
+          <p class="brand-tagline">Your trusted partner in Insurance &amp; Investments.</p>
+        </div>
+
+        <!-- Footer navigation -->
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Insurance</a></li>
+              <li><a href="#">Investments</a></li>
+              <li><a href="#">Who We Are</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="#">Resource Hub</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Bottom row -->
+      <div class="footer-bottom">
+        <p>© 2025 Family First Insurance. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Primary dropdown logic -->
+    <script>
+      (function () {
+        const items = document.querySelectorAll('.has-dropdown > .nav-link');
+        if (!items.length) return;
+
+        function closeAll() {
+          document.querySelectorAll('.has-dropdown.open').forEach(p => {
+            p.classList.remove('open');
+            const link = p.querySelector('.nav-link');
+            link && link.setAttribute('aria-expanded', 'false');
+          });
+        }
+
+        items.forEach(link => {
+          const parent = link.parentElement;
+
+          // Hover intent (desktop)
+          parent.addEventListener('mouseenter', () => {
+            parent.classList.add('open');
+            link.setAttribute('aria-expanded','true');
+          });
+          parent.addEventListener('mouseleave', () => {
+            parent.classList.remove('open');
+            link.setAttribute('aria-expanded','false');
+          });
+
+          // Click to toggle (touch/mobile or keyboard)
+          link.addEventListener('click', (e) => {
+            const isOpen = parent.classList.contains('open');
+            const hasMenu = !!parent.querySelector('.dropdown');
+            if (hasMenu && !isOpen) {
+              e.preventDefault();          // first tap opens instead of navigating
+              closeAll();
+              parent.classList.add('open');
+              link.setAttribute('aria-expanded','true');
+            }
+            // if already open, second click will navigate normally
+          });
+
+          // Keyboard support
+          link.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') {
+              e.preventDefault();
+              parent.classList.toggle('open');
+              link.setAttribute('aria-expanded', parent.classList.contains('open') ? 'true' : 'false');
+            }
+            if (e.key === 'Escape') {
+              parent.classList.remove('open');
+              link.setAttribute('aria-expanded','false');
+              link.blur();
+            }
+          });
+        });
+
+        // Click outside to close
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-links')) closeAll();
+        });
+
+        // Close on ESC globally
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeAll();
+        });
+      })();
+    </script>
+
+    <!-- Submenu logic (keeps specific submenus open) -->
+    <script>
+      (function(){
+        const items = document.querySelectorAll('.dropdown .has-submenu');
+        if (!items.length) return;
+
+        function closeSiblings(li){
+          li.parentElement.querySelectorAll('.has-submenu.open').forEach(sib=>{
+            if (sib !== li){
+              sib.classList.remove('open');
+              const a = sib.querySelector('.submenu-toggle');
+              a && a.setAttribute('aria-expanded','false');
+            }
+          });
+        }
+
+        items.forEach(li=>{
+          const link = li.querySelector('.submenu-toggle');
+          const sub  = li.querySelector('.sub-menu');
+          if (!link || !sub) return;
+
+          const isForceOpen = li.classList.contains('force-open') || sub.id === 'life-sub';
+
+          // Ensure ARIA state
+          link.setAttribute('aria-expanded', isForceOpen ? 'true' : (li.classList.contains('open') ? 'true' : 'false'));
+
+          // Keep forced ones open
+          if (isForceOpen) {
+            li.classList.add('open');
+            return;
+          }
+
+          // Click: first click opens, second click navigates
+          link.addEventListener('click', (e)=>{
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+
+            const open = li.classList.contains('open');
+            if (!open){
+              e.preventDefault();
+              closeSiblings(li);
+              li.classList.add('open');
+              link.setAttribute('aria-expanded','true');
+            }
+          });
+
+          // Keyboard: Space toggles; Enter opens if closed
+          link.addEventListener('keydown', (e)=>{
+            if (e.key === ' '){
+              e.preventDefault();
+              const open = li.classList.toggle('open');
+              link.setAttribute('aria-expanded', open ? 'true' : 'false');
+            } else if (e.key === 'Enter'){
+              const open = li.classList.contains('open');
+              if (!open){
+                e.preventDefault();
+                closeSiblings(li);
+                li.classList.add('open');
+                link.setAttribute('aria-expanded','true');
+              }
+            } else if (e.key === 'Escape'){
+              li.classList.remove('open');
+              link.setAttribute('aria-expanded','false');
+              link.blur();
+            }
+          });
+        });
+
+        // Click outside submenu to close (except force-open)
+        document.addEventListener('click', (e)=>{
+          if (!e.target.closest('.dropdown')){
+            document.querySelectorAll('.dropdown .has-submenu.open').forEach(li=>{
+              if (li.classList.contains('force-open')) return;
+              li.classList.remove('open');
+              const a = li.querySelector('.submenu-toggle');
+              a && a.setAttribute('aria-expanded','false');
+            });
+          }
+        });
+      })();
+    </script>
+
+    <!-- Carousel -->
+    <script>
+      (function () {
+        const carousel = document.querySelector('.ffi-carousel');
+        if (!carousel) return;
+
+        const track    = carousel.querySelector('.ffi-carousel__track');
+        const slides   = Array.from(carousel.querySelectorAll('.ffi-slide'));
+        const prev     = carousel.querySelector('.ffi-btn.prev');
+        const next     = carousel.querySelector('.ffi-btn.next');
+        const dotsWrap = carousel.querySelector('.ffi-dots');
+
+        let index = 0, autoTimer = null;
+
+        slides.forEach((_, i) => {
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('role','tab');
+          b.setAttribute('aria-label',`Go to slide ${i+1}`);
+          b.setAttribute('aria-selected', i===0 ? 'true' : 'false');
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        });
+        const dots = Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+
+        function update() {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+          dots.forEach((d, i) => d.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+        }
+        function goTo(i) { index = (i + slides.length) % slides.length; update(); restartAuto(); }
+
+        prev.addEventListener('click', () => goTo(index - 1));
+        next.addEventListener('click', () => goTo(index + 1));
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') goTo(index - 1);
+          if (e.key === 'ArrowRight') goTo(index + 1);
+        });
+
+        function startAuto(){ autoTimer = setInterval(() => goTo(index + 1), 6000); }
+        function stopAuto(){ if (autoTimer) clearInterval(autoTimer); }
+        function restartAuto(){ stopAuto(); startAuto(); }
+
+        carousel.addEventListener('mouseenter', stopAuto);
+        carousel.addEventListener('mouseleave', startAuto);
+
+        update(); startAuto();
+      })();
+    </script>
+
+    <!-- Scroll reveal -->
+    <script>
+      (function () {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
+
+        els.forEach(el => {
+          const d  = el.getAttribute('data-delay');
+          const du = el.getAttribute('data-duration');
+          if (d)  el.style.setProperty('--rv-delay', `${parseInt(d,10)}ms`);
+          if (du) el.style.setProperty('--rv-dur',   `${parseInt(du,10)}ms`);
+        });
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(({ isIntersecting, target }) => {
+            if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
+
+        els.forEach(el => io.observe(el));
+      })();
+    </script>
+
+    <!-- Brand rail -->
+    <script>
+      (function(){
+        function onReady(fn){
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn, {once:true});
+          } else { fn(); }
+        }
+
+        onReady(function initBrandRail(){
+          const rail = document.querySelector('.brand-rail');
+          const track = document.querySelector('.brand-rail__track');
+          if (!rail || !track) return;
+
+          const imgs = Array.from(track.querySelectorAll('img'));
+          const waitForImages = Promise.race([
+            Promise.all(imgs.map(img => {
+              if (img.complete && img.naturalWidth) return true;
+              return new Promise(res => {
+                const done = () => res(true);
+                img.addEventListener('load', done, { once:true });
+                img.addEventListener('error', done, { once:true });
+              });
+            })),
+            new Promise(res => setTimeout(res, 1500))
+          ]);
+
+          waitForImages.then(() => {
+            const alreadyDuped = track.querySelector('img[aria-hidden="true"]');
+            if (!alreadyDuped) {
+              const firstSet = Array.from(track.children);
+              firstSet.forEach(li => {
+                const clone = li.cloneNode(true);
+                const img = clone.querySelector('img');
+                if (img) img.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+              });
+            }
+
+            // Force reflow
+            track.offsetWidth;
+            const loop = Math.ceil(track.scrollWidth / 2);
+            if (loop <= 0) return;
+            track.style.setProperty('--looppx', loop);
+            track.style.setProperty('--dur', '28s');
+
+            // Animate only in view
+            const io = new IntersectionObserver(([entry]) => {
+              if (entry.isIntersecting) {
+                track.classList.add('brand-rail--px');
+              } else {
+                track.classList.remove('brand-rail--px');
+              }
+            }, { threshold: 0.2 });
+            io.observe(rail);
+          });
+        });
+      })();
+    </script>
+
+    <!-- Flash toasts auto-dismiss -->
+    <script>
+      (function(){
+        const box = document.querySelector('.flash-container');
+        if(!box) return;
+
+        const toasts = box.querySelectorAll('.flash');
+        toasts.forEach((el, i) => {
+          setTimeout(() => {
+            el.style.transition = 'opacity .35s ease, transform .35s ease';
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(-6px)';
+            setTimeout(() => el.remove(), 350);
+          }, 3000 + i*250);
+        });
+
+        // remove container when empty
+        const obs = new MutationObserver(() => {
+          if (!box.querySelector('.flash')) box.remove();
+        });
+        obs.observe(box, { childList: true });
+      })();
+    </script>
+
+    <!-- Mobile hamburger toggle -->
+    <script>
+      (function(){
+        const navbar = document.querySelector('.navbar');
+        const toggle = document.querySelector('.nav-toggle');
+        const links  = document.getElementById('primary-nav');
+        if (!navbar || !toggle || !links) return;
+
+        const topDropdownParents = () => Array.from(document.querySelectorAll('.has-dropdown'));
+        const submenus           = () => Array.from(document.querySelectorAll('.dropdown .has-submenu'));
+        const topLinks           = () => Array.from(document.querySelectorAll('.has-dropdown > .nav-link'));
+        const submenuToggles     = () => Array.from(document.querySelectorAll('.submenu-toggle'));
+
+        function setExpandedState(isOpen){
+          // Top-level dropdown parents
+          topDropdownParents().forEach(li => li.classList.toggle('open', isOpen));
+          topLinks().forEach(a => a.setAttribute('aria-expanded', isOpen ? 'true' : 'false'));
+
+          // Nested submenus
+          submenus().forEach(li => li.classList.toggle('open', isOpen));
+          submenuToggles().forEach(a => a.setAttribute('aria-expanded', isOpen ? 'true' : 'false'));
+        }
+
+        function closeMenu(){
+          navbar.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('no-scroll');
+          setExpandedState(false);   // collapse ARIA + .open states
+        }
+
+        toggle.addEventListener('click', () => {
+          const open = navbar.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          document.body.classList.toggle('no-scroll', open); // optional
+          setExpandedState(open);     // <- expand everything on open
+        });
+
+        // Close on outside click / ESC
+        document.addEventListener('click', (e) => {
+          if (!navbar.contains(e.target)) closeMenu();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
+        });
+
+        // Close on resize back to desktop
+        const mq = window.matchMedia('(min-width: 901px)');
+        mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
+      })();
+    </script>
+  </body>
+</html>

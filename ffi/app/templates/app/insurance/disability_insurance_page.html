@@ -1,0 +1,312 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Disability Insurance - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Disability Insurance</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Top intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Disability insurance intro">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            Protect your <span class="u-underline">paycheque</span> if illness or injury stops work.<br>
+            Stay on track while you <span class="u-underline">recover</span>.
+          </h2>
+        </div>
+      </section>
+
+      <!-- Disability overview: left copy + right photo cluster -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="Disability insurance overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What is disability insurance?</h3>
+                <p class="wl-a">
+                  Disability insurance replaces a portion of your income with a monthly benefit if you’re unable to work
+                  due to a covered illness or injury. Benefits help pay everyday bills—rent or mortgage, groceries, loans,
+                  and childcare—so you can focus on getting better.
+                </p>
+
+                <h3 class="wl-q">How does it work?</h3>
+                <p class="wl-a">
+                  After an <em>elimination period</em> (e.g., 30/60/90/120/180 days), monthly payments begin and continue
+                  until you recover or reach the chosen <em>benefit period</em> (e.g., 2 years, 5 years, or to age 65/70).
+                  Your ability to claim depends on the policy’s <em>definition of disability</em> (e.g., own-occupation or any-occupation).
+                  Optional riders can add partial/residual benefits, cost-of-living increases, and future purchase options.
+                </p>
+
+                <h3 class="wl-q">Who is it best suited for?</h3>
+                <p class="wl-a">
+                  Anyone who relies on their income—employees, contractors, professionals, and business owners.
+                  It’s especially helpful if you have fixed obligations (mortgage, family expenses, business overhead)
+                  or limited emergency savings. It can also complement employer long-term disability (LTD) plans.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Related photos">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/di-2.png' %}" alt="Family budgeting together">
+                </figure>
+                <figure class="wl-photo wl-photo--b">
+                  <img src="{% static 'images/di-1.png' %}" alt="Reviewing a plan with an advisor">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Features Carousel ============== -->
+  <section class="carousel-band" aria-label="Key features of a disability insurance policy">
+    <!-- Header block -->
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key features of a</span><br>
+        <span class="cool">disability insurance policy</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        Your income is your most valuable asset. Here’s how disability coverage can keep money coming in if health issues keep you from working.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Disability insurance key features">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <section class="ffi-slide" role="group" aria-label="1 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Monthly Income Benefit</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Replace a portion of your earnings</h3>
+                <p class="ffi-slide__body">
+                  Receive a monthly benefit—often up to about 60–70% of gross income (subject to financial underwriting)—if you meet the policy’s disability definition.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="ffi-slide" role="group" aria-label="2 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Elimination &amp; Benefit Periods</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Timing that fits your savings and needs</h3>
+                <p class="ffi-slide__body">
+                  Choose how long you self-fund before benefits begin (30–180+ days), and how long payments can last
+                  (e.g., 2 or 5 years, or to age 65/70). Longer elimination periods usually lower premiums.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="ffi-slide" role="group" aria-label="3 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Definition of Disability</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Own-occupation vs. any-occupation</h3>
+                <p class="ffi-slide__body">
+                  The claim standard matters. “Own-occupation” focuses on your ability to perform your regular job duties,
+                  while “any-occupation” is broader. We’ll help you compare definitions across carriers.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="ffi-slide" role="group" aria-label="4 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">04</span>
+                <span class="ffi-badge-text">Partial &amp; Residual Benefits</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Support when you can work <em>some</em> but not all</h3>
+                <p class="ffi-slide__body">
+                  Many policies pay proportionate benefits if you lose part of your income or hours.
+                  Return-to-work incentives and rehab support can help you transition back more smoothly.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="ffi-slide" role="group" aria-label="5 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">05</span>
+                <span class="ffi-badge-text">Optional Riders</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Customize protection for your career</h3>
+                <p class="ffi-slide__body">
+                  Add Cost-of-Living Adjustment (COLA), Future Purchase Option, own-occupation enhancements,
+                  and more. Many individual policies are guaranteed renewable, and some are non-cancellable.
+                </p>
+              </div>
+            </section>
+
+        </div>
+      </div>
+
+      <!-- Controls (dots are built in JS; keep container empty) -->
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Disability insurance FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>How much coverage do I need?</summary>
+          <div>
+            A common guideline is up to <strong>~60–70% of gross income</strong>, subject to financial underwriting
+            and existing coverage. We’ll right-size the benefit to your budget and obligations.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>I already have group LTD at work—do I still need this?</summary>
+          <div>
+            Group LTD is a great foundation, but it can be <em>taxable</em> if your employer pays the premium, may cap benefits,
+            and often includes offsets (CPP/QPP, EI, WSIB, etc.). An individual policy can top up, add own-occupation protection,
+            and stay with you if you change jobs.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What affects my price?</summary>
+          <div>
+            Age, health, smoking status, <em>occupation class</em>, income, benefit amount, elimination/benefit periods,
+            and riders all influence premiums. We compare carriers to find strong value for your situation.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Are benefits taxable?</summary>
+          <div>
+            Generally, <em>individually owned</em> benefits are tax-free when premiums are paid with after-tax dollars.
+            Employer-paid group LTD benefits are typically taxable. Always confirm with your advisor and tax professional.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Still have questions? (CTA) ===== -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Still have questions?</span></h2>
+          <p class="advisor-cta__sub">Reach out to speak to an advisor and get clear, no-pressure guidance.</p>
+
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <script>
+    // Robust carousel controller for wl-features (prevents duplicate dots)
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;   // prevent double init
+      root.dataset.init = '1';
+
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      // Build dots once, and keep them normalized if another script adds more
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => {
+        dots = normalizeDots();
+        updateAria();
+      });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

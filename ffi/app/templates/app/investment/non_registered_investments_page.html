@@ -1,0 +1,354 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Non-Registered Investments - Family First{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Non-Registered Investments</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Non-registered investments intro">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+              Non-registered accounts are flexible, taxable investment accounts. They’re great once registered room
+              (RRSP/TFSA/FHSA/RESP) is used, or when you want full access to your money without withdrawal rules.
+              We’ll help you build a diversified, tax-aware portfolio you can stick with.
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+          <h2 class="ins-intro__headline">
+            Invest with <span class="u-underline">flexibility</span>.<br>
+            Grow with <span class="u-underline">discipline</span>.
+          </h2>
+        </div>
+      </section>
+
+      <!-- What is it? -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="What is a non-registered account" id="overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What is a non-registered account?</h3>
+                <p class="wl-a">
+                  A standard taxable investment account with no contribution limits or withdrawal restrictions. You can hold
+                  ETFs, mutual funds, stocks, bonds, and GICs. Perfect for overflow savings or goals that need flexibility.
+                </p>
+
+                <h3 class="wl-q">Why it’s useful</h3>
+                <p class="wl-a">
+                  Unlimited contributions, joint ownership options, and the ability to realize capital gains on your own schedule.
+                  It also complements registered accounts for asset-location and tax planning.
+                </p>
+
+                <h3 class="wl-q">Good fit</h3>
+                <p class="wl-a">
+                  Savers who’ve maxed registered room, business owners with variable income, or anyone wanting access to funds
+                  without registered-plan withdrawal rules.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Non-registered image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/invest_nonregistered.png' %}" alt="Non-registered overview">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tax treatment -->
+      <section class="wl-plain" aria-label="Tax treatment" id="tax">
+        <div class="container">
+          <div class="wl-split">
+            <aside class="wl-right" aria-label="Tax image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--f">
+                  <img src="{% static 'images/wli-2.png' %}" alt="Tax treatment">
+                </figure>
+              </div>
+            </aside>
+
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">How are returns taxed?</h3>
+                <p class="wl-a">
+                  In a non-registered account, earnings are taxable annually depending on type:
+                </p>
+                <ul class="fs-list">
+                  <li><strong>Interest</strong> — fully taxable in the year earned.</li>
+                  <li><strong>Eligible dividends</strong> — preferential dividend tax treatment.</li>
+                  <li><strong>Capital gains</strong> — only the taxable portion is included when realized.</li>
+                </ul>
+
+                <h3 class="wl-q">How we optimize</h3>
+                <p class="wl-a">
+                  We use tax-aware asset location, deferred rebalancing windows, and—when appropriate—tax-loss harvesting
+                  to manage realized gains and keep portfolios efficient.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio approach -->
+      <section class="wl-plain" aria-label="Portfolio approach" id="portfolio">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What do we invest in?</h3>
+                <p class="wl-a">
+                  We build diversified, low-cost portfolios using broad-market ETFs or curated funds, plus cash &amp; GIC ladders
+                  for near-term needs. Automatic contributions and periodic rebalancing keep things on track.
+                </p>
+
+                <h3 class="wl-q">Risk &amp; time horizon</h3>
+                <p class="wl-a">
+                  Your mix of equities, bonds, and cash is matched to your timeline and comfort with volatility.
+                  Short-term goals skew safer; long-term growth leans more toward equities.
+                </p>
+
+                <p><a class="fs-link" href="/contact-us/">GET MY PORTFOLIO MIX <span aria-hidden="true">›</span></a></p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Portfolio image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/advice_pic.png' %}" alt="Portfolio construction">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- When to use vs. registered -->
+      <section class="wl-plain" aria-label="When to use" id="ordering">
+        <div class="container">
+          <div class="wl-split">
+            <aside class="wl-right" aria-label="Ordering image">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--f">
+                  <img src="{% static 'images/non-reg-investments-1.png' %}" alt="Account ordering">
+                </figure>
+              </div>
+            </aside>
+
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">When should I use non-registered?</h3>
+                <p class="wl-a">
+                  A common sequence is: emergency fund → FHSA (if eligible) → TFSA/RRSP mix → RESP for kids → then non-registered
+                  for overflow savings or flexible goals. We’ll tailor this to your cash-flow and tax bracket.
+                </p>
+
+                <h3 class="wl-q">Who benefits most?</h3>
+                <p class="wl-a">
+                  High savers who’ve maxed registered room, investors needing access before retirement, and business owners
+                  who coordinate with corporate/cash management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Benefits Carousel ============== -->
+  <section class="carousel-band" aria-label="Key benefits of non-registered investing">
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key Benefits of</span><br>
+        <span class="cool">Non-Registered Investing</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        Non-registered accounts add flexibility once registered room is used and let you fine-tune taxes, liquidity,
+        and risk across all your accounts.
+      </p>
+    </div>
+
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Non-registered benefits">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+          <!-- Slide 1 -->
+          <section class="ffi-slide" role="group" aria-label="1 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">01</span><span class="ffi-badge-text">Flexibility</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">No contribution or withdrawal rules</h3>
+              <p class="ffi-slide__body">Add or access funds at any time, set up joint ownership, and align cash flows with your goals.</p>
+            </div>
+          </section>
+
+          <!-- Slide 2 -->
+          <section class="ffi-slide" role="group" aria-label="2 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">02</span><span class="ffi-badge-text">Tax Planning</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Manage what’s realized</h3>
+              <p class="ffi-slide__body">Time capital gains, use tax-loss harvesting when suitable, and place the right assets in the right accounts.</p>
+            </div>
+          </section>
+
+          <!-- Slide 3 -->
+          <section class="ffi-slide" role="group" aria-label="3 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">03</span><span class="ffi-badge-text">Diversification</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Broad investment universe</h3>
+              <p class="ffi-slide__body">ETFs, funds, stocks, bonds, and GICs—mix and match to suit your time horizon and risk.</p>
+            </div>
+          </section>
+
+          <!-- Slide 4 -->
+          <section class="ffi-slide" role="group" aria-label="4 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">04</span><span class="ffi-badge-text">Automation</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Stay on track effortlessly</h3>
+              <p class="ffi-slide__body">Automatic contributions and scheduled rebalancing reduce timing stress and keep risk in bounds.</p>
+            </div>
+          </section>
+
+          <!-- Slide 5 -->
+          <section class="ffi-slide" role="group" aria-label="5 of 5">
+            <div class="ffi-slide__label"><span class="ffi-badge-num">05</span><span class="ffi-badge-text">Coordination</span></div>
+            <div>
+              <h3 class="ffi-slide__headline">Works with your registered plans</h3>
+              <p class="ffi-slide__body">Use non-registered to complete your asset mix once RRSP/TFSA room is full and to manage income in retirement.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Non-registered investing FAQs" id="faq">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>Non-registered vs. registered—how do I choose?</summary>
+          <div>Use registered accounts first for tax advantages when available. Then use non-registered for flexibility and overflow savings. We’ll map the right mix for your situation.</div>
+        </details>
+
+        <details class="faq">
+          <summary>What can I hold?</summary>
+          <div>Diversified ETFs/funds, stocks, bonds, and GICs. We’ll match the mix to your timeline and rebalance periodically.</div>
+        </details>
+
+        <details class="faq">
+          <summary>How are taxes reported?</summary>
+          <div>Your institution issues annual slips for interest, dividends, and realized capital gains/losses. We coordinate with your tax professional as needed.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Can I minimize taxes?</summary>
+          <div>Yes—through asset location, timing of gains, and (when appropriate) tax-loss harvesting. We design with tax in mind, without letting tax alone drive investment risk.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Talk to an advisor">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Build your non-registered plan</span></h2>
+          <p class="advisor-cta__sub">Get a flexible, tax-aware portfolio aligned to your goals.</p>
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <!-- Carousel JS (unchanged) -->
+  <script>
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;
+      root.dataset.init = '1';
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => { dots = normalizeDots(); updateAria(); });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

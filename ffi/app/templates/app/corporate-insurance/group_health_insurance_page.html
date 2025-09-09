@@ -1,0 +1,310 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Group Health Insurance for Corporations - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Group Health Insurance for Corporations</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        SPEAK WITH A BENEFITS SPECIALIST
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Top intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Group benefits intro">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            Attract and retain top talent with <span class="u-underline">competitive benefits</span>.<br>
+          </h2>
+        </div>
+      </section>
+
+      <!-- Overview: left copy + right photo cluster -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="Group benefits overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What is group health insurance?</h3>
+                <p class="wl-a">
+                  Group health insurance (employee benefits) provides coverage for your employees and their families—
+                  typically including extended health care, prescription drugs, dental, vision, paramedical services,
+                  emergency travel medical, and more. Plans can also bundle life, AD&amp;D, and disability insurance.
+                </p>
+
+                <h3 class="wl-q">How does it work for employers?</h3>
+                <p class="wl-a">
+                  You choose a plan design, funding model, and eligibility rules (e.g., waiting periods, employee classes).
+                  The insurer (or administrator) handles claims and 24/7 support. Funding options include
+                  <em>fully insured</em>, <em>ASO/self-funded</em> with stop-loss, and <em>Health Spending Accounts (HSA)</em>—or a hybrid.
+                  We benchmark carriers, negotiate rates, and manage renewals and compliance.
+                </p>
+
+                <h3 class="wl-q">Who is it best suited for?</h3>
+                <p class="wl-a">
+                  Corporations of all sizes—from startups building their first benefits plan to established firms optimizing
+                  costs. Plans can be tailored by department or location using employee classes and contribution strategies.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Benefits imagery">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/group-health-insurance-1.png' %}" alt="Corporate team meeting about employee benefits">
+                </figure>
+                <figure class="wl-photo wl-photo--b">
+                  <img src="{% static 'images/group-health-insurance-2.png' %}" alt="Submitting a health claim through a mobile app">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Features Carousel ============== -->
+  <section class="carousel-band" aria-label="Key features of a corporate group benefits plan">
+    <!-- Header block -->
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key components of a</span><br>
+        <span class="cool">group health insurance strategy</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        Build a plan that balances value and affordability. Here are the pillars we help you configure and manage.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Group benefits key features">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <section class="ffi-slide" role="group" aria-label="1 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Health &amp; Dental</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Comprehensive core coverage</h3>
+                <p class="ffi-slide__body">
+                  Extended health (drugs, hospital, vision, paramedicals) and dental (basic, endo/perio, major, ortho options).
+                  Configure coinsurance, deductibles, and maximums by employee class.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="ffi-slide" role="group" aria-label="2 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Funding Models</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Fully insured, ASO, or HSA</h3>
+                <p class="ffi-slide__body">
+                  Choose predictable premiums (fully insured), pay-as-you-go claims with <em>stop-loss</em> (ASO),
+                  flexible <em>Health Spending Accounts</em>, or combine them to target your budget and risk profile.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="ffi-slide" role="group" aria-label="3 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Cost Controls</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Keep trends sustainable</h3>
+                <p class="ffi-slide__body">
+                  Apply drug formularies, prior authorization, dispensing-fee caps, pooling/stop-loss, smart copays,
+                  and tiered plans. Annual benchmarking and plan audits help curb renewal increases.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="ffi-slide" role="group" aria-label="4 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">04</span>
+                <span class="ffi-badge-text">Well-Being &amp; Mental Health</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Support the whole person</h3>
+                <p class="ffi-slide__body">
+                  Employee Assistance Programs (EAP), virtual care, mental health practitioners, wellness/HSA dollars,
+                  and preventive screenings improve outcomes and engagement.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="ffi-slide" role="group" aria-label="5 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">05</span>
+                <span class="ffi-badge-text">Admin &amp; Compliance</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Simple onboarding and renewals</h3>
+                <p class="ffi-slide__body">
+                  Digital enrolment, payroll integrations, clear eligibility/waiting periods, and proactive renewal support.
+                  We coordinate insurer negotiations, plan amendments, and employee communications.
+                </p>
+              </div>
+            </section>
+
+        </div>
+      </div>
+
+      <!-- Controls (dots are built in JS; keep container empty) -->
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Group benefits FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>How many employees do we need to start a plan?</summary>
+          <div>
+            Plans can start with only a few employees, though certain benefits and underwriting rules vary by group size and industry.
+            We’ll advise on minimums and the most cost-effective structure for your headcount.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Fully insured vs. ASO—what’s the difference?</summary>
+          <div>
+            Fully insured offers predictable premiums and insurer risk. ASO/self-funded reimburses actual claims with a monthly admin fee
+            and stop-loss protection for large claims. Hybrids (e.g., HSA + insured) balance flexibility and certainty.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What drives renewal increases?</summary>
+          <div>
+            Claims experience, demographics, trend/inflation (especially drugs and dental), pooling charges, and plan changes.
+            We use market benchmarking and design levers to manage renewals proactively.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Are benefits taxable?</summary>
+          <div>
+            Tax treatment can vary by benefit type and province (e.g., Québec differs). We’ll coordinate with your payroll and tax advisors
+            to implement the appropriate setup for employer/employee contributions.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Still have questions? (CTA) ===== -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Build a competitive benefits plan</span></h2>
+          <p class="advisor-cta__sub">Benchmark carriers, optimize design, and control costs—start with a quick discovery call.</p>
+
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <script>
+    // Robust carousel controller for wl-features (prevents duplicate dots)
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;   // prevent double init
+      root.dataset.init = '1';
+
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      // Build dots once, and keep them normalized if another script adds more
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => {
+        dots = normalizeDots();
+        updateAria();
+      });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

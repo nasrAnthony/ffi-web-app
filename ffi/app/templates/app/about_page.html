@@ -1,0 +1,110 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Insurance - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Who We Are</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      Meet our leadership, advisors and operations team at Family First Insurance who are here to provide the expert advice you need to secure your future.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+                Our team works continuously to ensure that every client receives personalized care and expert guidance.
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+
+          <h2 class="ins-intro__headline">
+            <span class="u-underline">Meet The Team</span>
+          </h2>
+        </div>
+      </section>
+      <!-- ========== Detailed sections (split layout) ========== -->
+      <section id="whole-life reveal" data-anim="up" data-duration="900" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card">
+              <h3 class="fs-title">Peter Rizkalla</h3>
+              <h3 class="fs-sub-title">CEO</h3>
+              <p class="fs-body">
+                Peter Rizkalla began his career in the insurance industry in DATE, proudly following in the footsteps of his mentors. A top performer from the outset, Peter quickly earned multiple Achievement, Honour, and President’s Awards, and became a member of the prestigious Million Dollar Round Table (MDRT) in DATE
+              </p>
+            </div>
+            <div class="wl-photos">
+                <figure class="wl-photo wl-photo--k">
+                  <img src="{% static 'images/peter-portrait.png' %}" alt="Family moment">
+                </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="whole-life" data-anim="up" data-duration="900" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card fs-card--profile">
+              <h3 class="fs-title">Daniel Harper</h3>
+              <h3 class="fs-sub-title">Advisor</h3>
+              <p class="fs-body">
+                Daniel is a Senior Financial Advisor with over 12 years of experience helping clients build long-term investment strategies. He specializes in retirement planning, portfolio diversification, and risk management, and is passionate about simplifying complex financial concepts for everyday investors.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="whole-life"  data-anim="up" data-duration="900" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card fs-card--profile">
+              <h3 class="fs-title">Sophia Martinez</h3>
+              <h3 class="fs-sub-title">Advisor</h3>
+              <p class="fs-body">
+                Sophia is a Business Strategy Advisor with a background in corporate consulting. She has guided startups and established firms alike in improving operations, entering new markets, and strengthening their customer experience. Her approach combines data-driven insights with creative problem-solving.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="whole-life reveal"  data-anim="up" data-duration="900" class="feature-split ins-split">
+        <div class="fs-wrap">
+          <article class="fs-row">
+            <div class="fs-card fs-card--profile">
+              <h3 class="fs-title">Marcus Bennett</h3>
+              <h3 class="fs-sub-title">Advisor</h3>
+              <p class="fs-body">
+                Marcus is an Operations Advisor who has worked with manufacturing and logistics firms to optimize supply chain processes. He is skilled in Lean methodologies, cost reduction, and quality improvement, and is known for his pragmatic, results-oriented approach.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- ========== CTA ========== -->
+      <section class="ins-cta reveal" data-anim="up" data-duration="900">
+        <div class="ins-cta__wrap">
+          <h3 class="ins-cta__title">Have questions for our team?</h3>
+          <a href="/contact-us/" class="btn-outline">Speak to an advisor</a>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+{% endblock %}

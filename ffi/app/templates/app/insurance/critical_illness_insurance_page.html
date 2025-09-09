@@ -1,0 +1,304 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Critical Illness Insurance - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Critical Illness Insurance</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Top intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Critical illness intro">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            Financial support when <span class="u-underline">health</span> surprises you.<br>
+            Focus on recovery. <span class="u-underline">We’ll handle the rest.</span>
+          </h2>
+        </div>
+      </section>
+
+      <!-- CI overview: left copy + right photo cluster -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="Critical illness overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+              <div class="wl-qa">
+                <h3 class="wl-q">What is critical illness insurance?</h3>
+                <p class="wl-a">
+                  Critical illness insurance pays a one-time lump-sum benefit if you’re diagnosed with a covered condition,
+                  such as cancer, heart attack, or stroke (as defined in the policy). You can use the funds however you need—treatment,
+                  travel, time off work, childcare, or everyday bills—so you can focus on recovery.
+                </p>
+
+                <h3 class="wl-q">How does it work?</h3>
+                <p class="wl-a">
+                  If a covered condition is diagnosed and the policy requirements are met (including any waiting and
+                  survival periods), the benefit is paid directly to you. Coverage is typically offered for set terms
+                  (e.g., to age 65/75/100) with level premiums, and many plans include options such as Return of Premium.
+                </p>
+
+                <h3 class="wl-q">Who is it best suited for?</h3>
+                <p class="wl-a">
+                  CI coverage is valuable for families and individuals who want a financial cushion during a serious health event,
+                  business owners who need to keep operations stable while they recover, and anyone whose budget would be strained
+                  by treatment costs or time away from work.
+                </p>
+              </div>
+            </div>
+
+            <aside class="wl-right" aria-label="Related photos">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/wli-1.png' %}" alt="Supportive family time">
+                </figure>
+                <figure class="wl-photo wl-photo--b">
+                  <img src="{% static 'images/insurance_life.png' %}" alt="Planning care and finances at a desk">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Features Carousel ============== -->
+  <section class="carousel-band" aria-label="Key features of a critical illness policy">
+    <!-- Header block -->
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key features of a</span><br>
+        <span class="cool">critical illness insurance policy</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        A serious diagnosis can disrupt life in many ways. Here are the core features that make critical illness coverage
+        a practical safety net while you focus on getting well.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Critical illness key features">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <section class="ffi-slide" role="group" aria-label="1 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Lump-Sum Benefit</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Cash you can use for what matters</h3>
+                <p class="ffi-slide__body">
+                  Receive a one-time payment upon a covered diagnosis. Use it for treatment, income replacement,
+                  travel to specialists, home care, or everyday expenses—no receipts required.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="ffi-slide" role="group" aria-label="2 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Covered Conditions</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Protection for major health events</h3>
+                <p class="ffi-slide__body">
+                  Plans typically cover conditions such as life-threatening cancer, heart attack, and stroke, plus additional
+                  illnesses defined in the contract. Exact definitions and lists vary by insurer—your advisor will help compare.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="ffi-slide" role="group" aria-label="3 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Waiting &amp; Survival Periods</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Benefit timing that aligns with recovery</h3>
+                <p class="ffi-slide__body">
+                  Policies include waiting/survival periods that must be met after diagnosis before benefits are payable.
+                  We’ll walk you through the timelines so there are no surprises at claim time.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="ffi-slide" role="group" aria-label="4 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">04</span>
+                <span class="ffi-badge-text">Premiums &amp; Terms</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Level costs over a clear coverage period</h3>
+                <p class="ffi-slide__body">
+                  Choose coverage to a target age (e.g., 65/75/100). Premiums are typically level for the chosen term,
+                  with options to adjust coverage as your needs change.
+                </p>
+              </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="ffi-slide" role="group" aria-label="5 of 5">
+              <div class="ffi-slide__label">
+                <span class="ffi-badge-num">05</span>
+                <span class="ffi-badge-text">Optional Add-Ons</span>
+              </div>
+              <div>
+                <h3 class="ffi-slide__headline">Customize for your family and goals</h3>
+                <p class="ffi-slide__body">
+                  Many plans offer Return of Premium (on surrender or claim), partial payouts for early-stage conditions,
+                  or child coverage options. We’ll tailor a solution that fits your budget and priorities.
+                </p>
+              </div>
+            </section>
+
+        </div>
+      </div>
+
+      <!-- Controls (dots are built in JS; keep container empty) -->
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+    <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Critical illness FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+
+        <details class="faq">
+          <summary>How much coverage do I need?</summary>
+          <div>
+            A common approach is to estimate 6–24 months of after-tax income plus any expected treatment or travel costs.
+            We’ll size coverage to your budget and priorities.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What conditions are covered?</summary>
+          <div>
+            Coverage varies by insurer and is defined precisely in the policy wording. Core conditions often include
+            life-threatening cancer, heart attack, and stroke, with additional illnesses depending on the plan.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What affects my price?</summary>
+          <div>
+            Age, health, coverage amount, contract term (to age 65/75/100), and optional features like Return of Premium
+            all impact the premium. We compare carriers to find strong value.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== Still have questions? (CTA) ===== -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+      <div class="container">
+        <div class="advisor-cta">
+          <h2 class="advisor-cta__title"><span class="u-underline">Still have questions?</span></h2>
+          <p class="advisor-cta__sub">Reach out to speak to an advisor and get clear, no-pressure guidance.</p>
+
+          <div class="advisor-cta__actions">
+            <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <script>
+    // Robust carousel controller for wl-features (prevents duplicate dots)
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;   // prevent double init
+      root.dataset.init = '1';
+
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      // Build dots once, and keep them normalized if another script adds more
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => {
+        dots = normalizeDots();
+        updateAria();
+      });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}

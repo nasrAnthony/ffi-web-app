@@ -1,0 +1,291 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+{% block title %}Insurance - Family First Insurance{% endblock %}
+{% block content %}
+
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Universal Life Insurance</h1>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        REACH OUT TO SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient band -->
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+
+      <!-- Top intro -->
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+        <div class="ins-intro__wrap">
+          <h2 class="ins-intro__headline">
+            <span class="u-underline">Affordable</span> protection.<br>
+            Lasting <span class="u-underline">peace</span> of mind.
+          </h2>
+        </div>
+      </section>
+
+      <!-- Whole Life: left copy + right photo cluster -->
+      <section class="wl-plain reveal" data-anim="up" data-duration="900" aria-label="Whole life overview">
+        <div class="container">
+          <div class="wl-split">
+            <div class="wl-left">
+            <div class="wl-qa">
+                <h3 class="wl-q">What is universal life insurance?</h3>
+                <p class="wl-a">
+                Universal life is permanent coverage with flexibility. You choose how much to fund within
+                minimum and maximum limits, and you can adjust the death benefit over time. The policy
+                builds tax-advantaged cash value that earns interest or is linked to market strategies,
+                and this value can be accessed through loans or withdrawals when available.
+                </p>
+
+                <h3 class="wl-q">How does universal life insurance differ from other types?</h3>
+                <p class="wl-a">
+                Compared with whole life, universal life offers more control over premiums and the death
+                benefit, and growth potential depends on credited rates or market performance rather than
+                fixed guarantees. It usually requires periodic reviews to ensure funding keeps the policy
+                in force. Compared with term insurance, universal life lasts for life and builds cash value,
+                although the initial cost is higher.
+                </p>
+
+                <h3 class="wl-q">Who is universal life insurance best suited for?</h3>
+                <p class="wl-a">
+                Universal life suits people who want lifelong protection with flexibility. It works well
+                for families and business owners who may want to change coverage, for clients seeking
+                tax-efficient accumulation, and for those comfortable monitoring funding levels and
+                performance with an advisor.
+                </p>
+            </div>
+            </div>
+            <aside class="wl-right" aria-label="Related photos">
+              <div class="wl-photos">
+                <figure class="wl-photo wl-photo--a">
+                  <img src="{% static 'images/ul-2.png' %}" alt="Family moment">
+                </figure>
+                <figure class="wl-photo wl-photo--b">
+                  <img src="{% static 'images/ul-1.png' %}" alt="Planning at a desk">
+                </figure>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section><!-- /after-hero-bg -->
+
+  <!-- ============== WHITE SECTION: Key Features Carousel ============== -->
+  <section class="carousel-band" aria-label="Key features of a universal life policy">
+    <!-- Header block -->
+    <div class="wl-kf">
+      <h2 class="wl-kf__title">
+        <span class="warm">Key features of a</span><br>
+        <span class="cool">universal life insurance policy</span>
+      </h2>
+      <div class="wl-kf__rule" aria-hidden="true"></div>
+      <p class="wl-kf__copy">
+        When deciding if this kind of coverage is right for you, it helps to understand its core features.
+        Here is a concise overview of what term life can provide, so you can feel informed and confident as you evaluate your options.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div class="ffi-carousel" id="wl-features" data-carousel="wl-features" role="region" aria-roledescription="carousel" aria-label="Whole life key features">
+      <div class="ffi-carousel__viewport">
+        <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <section class="ffi-slide" role="group" aria-label="1 of 5">
+            <div class="ffi-slide__label">
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Lifetime Protection</span>
+            </div>
+            <div>
+                <h3 class="ffi-slide__headline">Permanent coverage with an adjustable death benefit</h3>
+                <p class="ffi-slide__body">
+                Universal life provides lifelong insurance. You can request changes to the death benefit
+                as needs evolve, subject to product rules and underwriting where required.
+                </p>
+            </div>
+            </section>
+
+            <!-- Slide 2 -->
+            <section class="ffi-slide" role="group" aria-label="2 of 5">
+            <div class="ffi-slide__label">
+                <span class="ffi-badge-num">02</span>
+                <span class="ffi-badge-text">Flexible Premiums</span>
+            </div>
+            <div>
+                <h3 class="ffi-slide__headline">Control how and when you fund the policy</h3>
+                <p class="ffi-slide__body">
+                Premiums can be varied within minimum and maximum limits. You may pay more in strong years
+                or reduce payments later, provided the policy has sufficient value to stay in force.
+                </p>
+            </div>
+            </section>
+
+            <!-- Slide 3 -->
+            <section class="ffi-slide" role="group" aria-label="3 of 5">
+            <div class="ffi-slide__label">
+                <span class="ffi-badge-num">03</span>
+                <span class="ffi-badge-text">Cash Value Growth</span>
+            </div>
+            <div>
+                <h3 class="ffi-slide__headline">Tax-advantaged value that can build over time</h3>
+                <p class="ffi-slide__body">
+                Cash value earns credited interest or follows chosen strategies, depending on the product.
+                Growth is tax-advantaged while it remains inside the policy, helping support long-term goals.
+                </p>
+            </div>
+            </section>
+
+            <!-- Slide 4 -->
+            <section class="ffi-slide" role="group" aria-label="4 of 5">
+            <div class="ffi-slide__label">
+                <span class="ffi-badge-num">04</span>
+                <span class="ffi-badge-text">Investment Choices</span>
+            </div>
+            <div>
+                <h3 class="ffi-slide__headline">Choose fixed, indexed, or market-linked options</h3>
+                <p class="ffi-slide__body">
+                Depending on the policy, you can allocate cash value to fixed interest, index-linked
+                strategies, or market-linked accounts. Regular reviews help keep funding and allocations
+                aligned with your objectives and risk comfort.
+                </p>
+            </div>
+            </section>
+
+            <!-- Slide 5 -->
+            <section class="ffi-slide" role="group" aria-label="5 of 5">
+            <div class="ffi-slide__label">
+                <span class="ffi-badge-num">05</span>
+                <span class="ffi-badge-text">Access & Loans</span>
+            </div>
+            <div>
+                <h3 class="ffi-slide__headline">Access cash value when you need flexibility</h3>
+                <p class="ffi-slide__body">
+                Many policies allow withdrawals or policy loans. Outstanding loans and withdrawals reduce
+                cash value and the death benefit and may have tax implications, so guidance from an advisor
+                is important.
+                </p>
+            </div>
+            </section>
+
+        </div>
+      </div>
+
+      <!-- Controls (dots are built in JS; keep container empty) -->
+      <div class="ffi-carousel__controls">
+        <button class="ffi-btn" data-prev aria-label="Previous slide">‹</button>
+        <div class="ffi-dots" aria-label="Slide selector"></div>
+        <button class="ffi-btn" data-next aria-label="Next slide">›</button>
+      </div>
+    </div>
+
+            <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Insurance FAQs">
+        <div class="container">
+        <h2 class="section-title"><span class="u-underline">Frequently asked questions</span></h2>
+        <details class="faq"><summary>How much coverage do I need?</summary><div>Many families target 7–10× annual income plus debts and future goals. We’ll tailor it to your budget.</div></details>
+        <details class="faq"><summary>Does term convert to permanent?</summary><div>Most term policies allow conversion to permanent coverage without medicals within a set window.</div></details>
+        <details class="faq"><summary>What affects my price?</summary><div>Age, health, coverage amount, term length, and riders. We compare carriers to find value.</div></details>
+        </div>
+    </section>
+
+
+    <!-- ===== Still have questions? (CTA) ===== -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+        <div class="container">
+            <div class="advisor-cta">
+            <h2 class="advisor-cta__title"><span class="u-underline">Still have questions?</span></h2>
+            <p class="advisor-cta__sub">Reach out to speak to an advisor and get clear, no-pressure guidance.</p>
+
+            <div class="advisor-cta__actions">
+                <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+            </div>
+
+            </div>
+        </div>
+    </section>
+  </section>
+
+  
+  <!-- ============== /WHITE SECTION ============== -->
+
+  <script>
+    // Robust carousel controller for wl-features (prevents duplicate dots)
+    (function () {
+      const root = document.querySelector('[data-carousel="wl-features"]');
+      if (!root || root.dataset.init === '1') return;   // prevent double init
+      root.dataset.init = '1';
+
+      const track = root.querySelector('.ffi-carousel__track');
+      const slides = Array.from(root.querySelectorAll('.ffi-slide'));
+      const prevBtn = root.querySelector('[data-prev]');
+      const nextBtn = root.querySelector('[data-next]');
+      const dotsWrap = root.querySelector('.ffi-dots');
+
+      function buildDots(){
+        dotsWrap.innerHTML = '';
+        for (let i = 0; i < slides.length; i++){
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        }
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      function normalizeDots(){
+        const current = dotsWrap.querySelectorAll('.ffi-dot').length;
+        if (current !== slides.length) return buildDots();
+        return Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+      }
+
+      // Build dots once, and keep them normalized if another script adds more
+      let dots = normalizeDots();
+      const mo = new MutationObserver(() => {
+        dots = normalizeDots();
+        updateAria();
+      });
+      mo.observe(dotsWrap, { childList: true });
+
+      let index = 0;
+      const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+      function updateAria(){
+        dots.forEach((d, k) => d.setAttribute('aria-selected', k === index ? 'true' : 'false'));
+        slides.forEach((s, k) => s.setAttribute('aria-label', `${k + 1} of ${slides.length}`));
+      }
+
+      function goTo(i){
+        index = clamp(i, 0, slides.length - 1);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateAria();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+
+      root.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') goTo(index + 1);
+        if (e.key === 'ArrowLeft')  goTo(index - 1);
+      });
+
+      let startX = null;
+      root.addEventListener('pointerdown', e => { startX = e.clientX; });
+      root.addEventListener('pointerup', e => {
+        if (startX === null) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
+        startX = null;
+      });
+
+      goTo(0);
+    })();
+  </script>
+
+{% endblock %}
