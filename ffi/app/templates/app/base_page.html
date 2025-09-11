@@ -146,11 +146,11 @@
 
             <!-- RESOURCES -->
             <li class="nav-item has-dropdown">
-              <a href="/resources/" class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" aria-haspopup="true" aria-expanded="false">
                 RESOURCES <span class="caret" aria-hidden="true"></span>
               </a>
               <ul class="dropdown" role="menu">
-                <li><a href="#">FAQs</a></li>
+                <li><a href="/resources/">FAQs</a></li>
               </ul>
             </li>
 
@@ -371,8 +371,9 @@
         const next     = carousel.querySelector('.ffi-btn.next');
         const dotsWrap = carousel.querySelector('.ffi-dots');
 
-        let index = 0, autoTimer = null;
+        let index = 0;
 
+        // Create dots
         slides.forEach((_, i) => {
           const b = document.createElement('button');
           b.className = 'ffi-dot';
@@ -390,26 +391,26 @@
           slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
           dots.forEach((d, i) => d.setAttribute('aria-selected', i === index ? 'true' : 'false'));
         }
-        function goTo(i) { index = (i + slides.length) % slides.length; update(); restartAuto(); }
 
+        function goTo(i) { 
+          index = (i + slides.length) % slides.length; 
+          update(); 
+        }
+
+        // Button clicks
         prev.addEventListener('click', () => goTo(index - 1));
         next.addEventListener('click', () => goTo(index + 1));
 
+        // Keyboard support
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') goTo(index - 1);
           if (e.key === 'ArrowRight') goTo(index + 1);
         });
 
-        function startAuto(){ autoTimer = setInterval(() => goTo(index + 1), 6000); }
-        function stopAuto(){ if (autoTimer) clearInterval(autoTimer); }
-        function restartAuto(){ stopAuto(); startAuto(); }
-
-        carousel.addEventListener('mouseenter', stopAuto);
-        carousel.addEventListener('mouseleave', startAuto);
-
-        update(); startAuto();
+        update();
       })();
     </script>
+
 
     <!-- Scroll reveal -->
     <script>

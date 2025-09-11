@@ -1,4 +1,179 @@
 {% extends "app/base_page.html" %}
-{% block title %}Resources - Family First Insurance{% endblock %}
+{% load static %}
+
+{% block title %}Family First Insurance – Home{% endblock %}
+
 {% block content %}
+
+  <!-- ================= Hero ================= -->
+  <div class="hero-content">
+    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">FAQs</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      Find answers to our most frequently asked questions.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
+        data-duration="3000" aria-label="Contact us now">
+        SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ===== Keep the hero as the page background for this band ===== -->
+<section class="after-hero-bg">
+  <div class="after-hero-surface">
+    <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Life insurance intro">
+      <div class="ins-intro__wrap">
+        <div class="ins-intro__copy">
+          <p>
+            Learn more about our firm and the services we offer.
+          </p>
+        </div>
+
+        <div class="ins-intro__rule" aria-hidden="true"></div>
+        <h2 class="ins-intro__headline">
+          Our <span class="u-underline">FAQs</span>
+        </h2>
+      </div>
+    </section>
+
+            <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Travel insurance FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">General FAQs</span></h2>
+
+        <details class="faq">
+          <summary>Do I need travel medical if I have a provincial plan?</summary>
+          <div>
+            Yes—provincial health plans offer limited out-of-province/out-of-country coverage and typically don’t cover
+            costly items like medical evacuation. Travel medical helps bridge the gap.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>When should I buy trip cancellation coverage?</summary>
+          <div>
+            As soon as you book. Buying early maximizes protection for pre-departure events. Some plans have time-sensitive
+            requirements—your advisor will confirm the deadlines for your itinerary.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Are pre-existing conditions covered?</summary>
+          <div>
+            It depends on the plan’s definition of stability and your medical history. Some policies cover stable conditions
+            after a set period; others require a questionnaire. We’ll compare options for you.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What coverage limit should I choose?</summary>
+          <div>
+            Higher limits provide greater protection for emergencies and evacuations. We’ll recommend limits that align with
+            your destination, trip length, and budget.
+          </div>
+        </details>
+      </div>
+    </section>
+
+        <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Travel insurance FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Insurance FAQs</span></h2>
+
+        <details class="faq">
+          <summary>Do I need travel medical if I have a provincial plan?</summary>
+          <div>
+            Yes—provincial health plans offer limited out-of-province/out-of-country coverage and typically don’t cover
+            costly items like medical evacuation. Travel medical helps bridge the gap.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>When should I buy trip cancellation coverage?</summary>
+          <div>
+            As soon as you book. Buying early maximizes protection for pre-departure events. Some plans have time-sensitive
+            requirements—your advisor will confirm the deadlines for your itinerary.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Are pre-existing conditions covered?</summary>
+          <div>
+            It depends on the plan’s definition of stability and your medical history. Some policies cover stable conditions
+            after a set period; others require a questionnaire. We’ll compare options for you.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What coverage limit should I choose?</summary>
+          <div>
+            Higher limits provide greater protection for emergencies and evacuations. We’ll recommend limits that align with
+            your destination, trip length, and budget.
+          </div>
+        </details>
+      </div>
+    </section>
+
+
+        <!-- FAQ (white) -->
+    <section class="ins-faq reveal" data-anim="up" data-duration="900" aria-label="Travel insurance FAQs">
+      <div class="container">
+        <h2 class="section-title"><span class="u-underline">Investment FAQs</span></h2>
+
+        <details class="faq">
+          <summary>Do I need travel medical if I have a provincial plan?</summary>
+          <div>
+            Yes—provincial health plans offer limited out-of-province/out-of-country coverage and typically don’t cover
+            costly items like medical evacuation. Travel medical helps bridge the gap.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>When should I buy trip cancellation coverage?</summary>
+          <div>
+            As soon as you book. Buying early maximizes protection for pre-departure events. Some plans have time-sensitive
+            requirements—your advisor will confirm the deadlines for your itinerary.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Are pre-existing conditions covered?</summary>
+          <div>
+            It depends on the plan’s definition of stability and your medical history. Some policies cover stable conditions
+            after a set period; others require a questionnaire. We’ll compare options for you.
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What coverage limit should I choose?</summary>
+          <div>
+            Higher limits provide greater protection for emergencies and evacuations. We’ll recommend limits that align with
+            your destination, trip length, and budget.
+          </div>
+        </details>
+      </div>
+    </section>
+
+
+        <!-- ===== Still have questions? (CTA) ===== -->
+    <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Still have questions">
+        <div class="container">
+            <div class="advisor-cta">
+            <h2 class="advisor-cta__title"><span class="u-underline">Still have questions?</span></h2>
+            <p class="advisor-cta__sub">Reach out to speak to an advisor and get clear, no-pressure guidance.</p>
+
+            <div class="advisor-cta__actions">
+                <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    
+</section>
+
+
 {% endblock %}

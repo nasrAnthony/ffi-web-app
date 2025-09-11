@@ -20,6 +20,6 @@ urlpatterns = [
     path("investments/registered-investments", views.registered_investments_view, name="registered-investments"),
     path("investments/rrsp-investments", views.rrsp_investments_view, name="rrsp-investments"),
     path("about-us/", views.about_view, name="about"),
-    path("resources/", views.resources, name="resources"),
+    path("resources/", views.resources_view, name="resources"),
     path("contact-us/", views.contact_view, name="contact"),
 ]

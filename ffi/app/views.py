@@ -86,7 +86,7 @@ def key_person_insurance_view(request):
 def about_view(request):
     return render(request, "app/about_page.html")
 
-def resources(request):
+def resources_view(request):
     return render(request, "app/resources_page.html")
 
 

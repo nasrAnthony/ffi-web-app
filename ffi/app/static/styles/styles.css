@@ -3869,3 +3869,21 @@ html, body { overflow-x: clip; }          /* better than hidden on iOS */
 
 /* --- 2) Safety: never let images themselves overflow their parents --- */
 img { max-width: 100%; height: auto; }
+
+
+/* Add breathing room below the title for mobile */
+@media (max-width: 768px) {
+  .how-works-vertical .hwwv {
+    margin-top: 2rem; /* adjust as needed */
+  }
+}
+
+/* Center the 2nd (middle) block on mobile */
+@media (max-width: 768px) {
+  .how-works-vertical .hwwv-node:nth-of-type(2) {
+    margin: 0 auto !important;
+    float: none !important;
+    display: flex;
+    justify-content: center;
+  }
+}
