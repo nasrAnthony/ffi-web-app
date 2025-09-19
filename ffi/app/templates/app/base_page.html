@@ -56,9 +56,9 @@
                     Life Insurance
                   </a>
                   <ul id="life-sub" class="sub-menu" role="menu">
-                    <li><a href="/insurance/life-insurance/term-life-insurance">Term Life Insurance</a></li>
                     <li><a href="/insurance/life-insurance/whole-life-insurance">Whole Life Insurance</a></li>
                     <li><a href="/insurance/life-insurance/universal-life-insurance">Universal Life Insurance</a></li>
+                    <li><a href="/insurance/life-insurance/term-life-insurance">Term Life Insurance</a></li>
                   </ul>
                 </li>
 
@@ -187,17 +187,15 @@
           <div class="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="#">Insurance</a></li>
-              <li><a href="#">Investments</a></li>
-              <li><a href="#">Who We Are</a></li>
+              <li><a href="/insurance">Insurance</a></li>
+              <li><a href="/investments">Investments</a></li>
+              <li><a href="/about-us">Who We Are</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>Information</h4>
             <ul>
-              <li><a href="#">Resource Hub</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li><a href="/resources">FAQs</a></li>
             </ul>
           </div>
         </div>
@@ -402,6 +400,57 @@
         next.addEventListener('click', () => goTo(index + 1));
 
         // Keyboard support
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') goTo(index - 1);
+          if (e.key === 'ArrowRight') goTo(index + 1);
+        });
+
+        update();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        const carousel = document.querySelectorAll('.ffi-carousel')[1]; // Adjust to target second carousel
+        if (!carousel) return;
+
+        const track    = carousel.querySelector('.ffi-carousel__track');
+        const slides   = Array.from(carousel.querySelectorAll('.ffi-slide'));
+        const prev     = carousel.querySelector('.ffi-btn.prev');
+        const next     = carousel.querySelector('.ffi-btn.next');
+        const dotsWrap = carousel.querySelector('.ffi-dots');
+
+        let index = 0;
+
+        // Create dots for the second carousel
+        slides.forEach((_, i) => {
+          const b = document.createElement('button');
+          b.className = 'ffi-dot';
+          b.type = 'button';
+          b.setAttribute('role', 'tab');
+          b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+          b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          b.addEventListener('click', () => goTo(i));
+          dotsWrap.appendChild(b);
+        });
+        const dots = Array.from(dotsWrap.querySelectorAll('.ffi-dot'));
+
+        function update() {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+          dots.forEach((d, i) => d.setAttribute('aria-selected', i === index ? 'true' : 'false'));
+        }
+
+        function goTo(i) {
+          index = (i + slides.length) % slides.length;
+          update();
+        }
+
+        // Button clicks for the second carousel
+        prev.addEventListener('click', () => goTo(index - 1));
+        next.addEventListener('click', () => goTo(index + 1));
+
+        // Keyboard support for the second carousel
         document.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') goTo(index - 1);
           if (e.key === 'ArrowRight') goTo(index + 1);

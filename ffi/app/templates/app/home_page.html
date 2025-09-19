@@ -46,16 +46,15 @@
         </h2>
         <div class="brand-rail__viewport">
           <ul class="brand-rail__track">
-            <li><img src="{% static 'images/logos/canadalife_logo.png' %}" alt="Canada Life"></li>
-            <li><img src="{% static 'images/logos/manu_logo.png' %}" alt="ManuLife"></li>
-            <li><img src="{% static 'images/logos/sunlife_logo.png' %}" alt="SunLife"></li>
-            <li><img src="{% static 'images/logos/rbc_logo.png' %}" alt="RBC"></li>
-            <li><img src="{% static 'images/logos/bmo_logo.png' %}" alt="BMO"></li>
-            <li><img src="{% static 'images/logos/empire_logo.png' %}" alt="Empire Life"></li>
             <li><img src="{% static 'images/logos/ia_logo.png' %}" alt="Industrial Alliance"></li>
             <li><img src="{% static 'images/logos/forester_logo.png' %}" alt="Forester Financial"></li>
             <li><img src="{% static 'images/logos/equitable_logo.png' %}" alt="Equitable Life of Canada"></li>
-            <li><img src="{% static 'images/logos/cpp_logo.png' %}" alt="Canada Protection Plan"></li>
+            <li><img src="{% static 'images/logos/cpp_logo.png' %}" alt="Canada Protection Plan"></li
+            <li><img src="{% static 'images/logos/bmo_logo.png' %}" alt="BMO"></li>
+            <li><img src="{% static 'images/logos/rbc_logo.png' %}" alt="RBC"></li>
+            <li><img src="{% static 'images/logos/manu_logo.png' %}" alt="ManuLife"></li>
+            <li><img src="{% static 'images/logos/sunlife_logo.png' %}" alt="SunLife"></li>
+            <li><img src="{% static 'images/logos/empire_logo.png' %}" alt="Empire Life"></li>
           </ul>
         </div>
       </div>
@@ -63,11 +62,10 @@
 
     <section class="feature-split feature-split--in-surface">
       <div class="fs-wrap">
-
         <div class="fs-head">
           <h2 class="fs-heading">
-            Build your peace of mind.<br>
-            <span class="fs-highlight">Protect what matters to you.</span>
+            Build your peace of mind<br>
+            <span class="fs-highlight">Protect what matters to you</span>
           </h2>
         </div>
         <!-- ========== Detailed sections (split layout) ========== -->
@@ -117,73 +115,127 @@
         </section>
       </div>
     </section>
+         <section class="carousel-band reveal" data-duration="900">
+        <div class="ffi-carousel" aria-label="Highlights">
 
+          <!-- Carousel Title -->
+          <header class="carousel-header reveal" data-anim="up" data-duration="900">
+            <h2 class="carousel-title">Client Testimonials</h2>
+            <p class="carousel-sub">
+              See what our clients have to say about us.
+            </p>
+          </header>
+
+          <div class="ffi-carousel__viewport">  
+            <div class="ffi-carousel__track">
+              <!-- Slide 1 -->
+              <article class="ffi-slide is-active">
+                <div class="ffi-slide__label_quote"></div>
+                <div class="ffi-slide__content">
+                  <p class="ffi-slide__headline_quote">Family First Insurance made finding the right coverage simple and stress-free. I feel confident knowing my family is protected.</p>
+                  <p class="ffi-slide__body">
+                    – Emily R.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Slide 2 -->
+              <article class="ffi-slide is-active">
+                <div class="ffi-slide__label_quote"></div>
+                <div class="ffi-slide__content">
+                  <p class="ffi-slide__headline_quote">The team at Family First helped me understand my options and provided the right solution for my needs. Great service and peace of mind!</p>
+                  <p class="ffi-slide__body">
+                    – James T.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Slide 3 -->
+              <article class="ffi-slide is-active">
+                <div class="ffi-slide__label_quote"></div>
+                <div class="ffi-slide__content">
+                  <p class="ffi-slide__headline_quote">Thanks to Family First, I finally feel secure about my financial future. Their personalized approach made all the difference.</p>
+                  <p class="ffi-slide__body">
+                    – Sarah L.
+                  </p>
+                </div>
+              </article>
+              </div>
+            </div>
+            <!-- Controls -->
+            <div class="ffi-carousel__controls">
+              <button class="ffi-btn prev" aria-label="Previous slide" type="button">‹</button>
+              <div class="ffi-dots" role="tablist" aria-label="Carousel pagination"></div>
+              <button class="ffi-btn next" aria-label="Next slide" type="button">›</button>
+            </div>
+          </div>
+        </section>
     <section class="carousel-band reveal" data-duration="900">
-    <div class="ffi-carousel" aria-label="Highlights">
+      <div class="ffi-carousel" aria-label="Highlights">
 
-      <!-- Carousel Title -->
-      <header class="carousel-header reveal" data-anim="up" data-duration="900">
-        <h2 class="carousel-title">Why Choose Us?</h2>
-        <p class="carousel-sub">
-          We make insurance and investments simple, guided, and tailored to you.
-        </p>
-      </header>
+        <!-- Carousel Title -->
+        <header class="carousel-header reveal" data-anim="up" data-duration="900">
+          <h2 class="carousel-title">Why Choose Us?</h2>
+          <p class="carousel-sub">
+            We make insurance and investments simple, guided, and tailored to you.
+          </p>
+        </header>
 
-      <div class="ffi-carousel__viewport">
-        <div class="ffi-carousel__track">
-          <!-- Slide 1 -->
-          <article class="ffi-slide is-active">
-            <div class="ffi-slide__label">
-              <span class="ffi-badge-num">01</span>
-              <span class="ffi-badge-text">Guided</span>
-            </div>
-            <div class="ffi-slide__content">
-              <h2 class="ffi-slide__headline">Clear guidance for every decision.</h2>
-              <p class="ffi-slide__body">
-                We explain your options in plain language and map them to your goals,
-                so you can make confident, informed choices about insurance and investments.
-              </p>
-            </div>
-          </article>
-
-            <!-- Slide 2 -->
-            <article class="ffi-slide">
+        <div class="ffi-carousel__viewport">
+          <div class="ffi-carousel__track">
+            <!-- Slide 1 -->
+            <article class="ffi-slide is-active">
               <div class="ffi-slide__label">
-                <span class="ffi-badge-num">02</span>
-                <span class="ffi-badge-text">Covered</span>
+                <span class="ffi-badge-num">01</span>
+                <span class="ffi-badge-text">Guided</span>
               </div>
               <div class="ffi-slide__content">
-                <h2 class="ffi-slide__headline">While your needs change, we keep you covered.</h2>
+                <h2 class="ffi-slide__headline">Clear guidance for every decision.</h2>
                 <p class="ffi-slide__body">
-                  We proactively review your situation so coverage and investments stay
-                  optimized for every stage of life.
+                  We explain your options in plain language and map them to your goals,
+                  so you can make confident, informed choices about insurance and investments.
                 </p>
               </div>
             </article>
 
-            <!-- Slide 3 -->
-            <article class="ffi-slide">
-              <div class="ffi-slide__label">
-                <span class="ffi-badge-num">03</span>
-                <span class="ffi-badge-text">Prepared</span>
-              </div>
-              <div class="ffi-slide__content">
-                <h2 class="ffi-slide__headline">Build for the future you want.</h2>
-                <p class="ffi-slide__body">
-                  From first policy to retirement planning, we align your strategy to milestones—
-                  family, business, and legacy.
-                </p>
-              </div>
-            </article>
+              <!-- Slide 2 -->
+              <article class="ffi-slide">
+                <div class="ffi-slide__label">
+                  <span class="ffi-badge-num">02</span>
+                  <span class="ffi-badge-text">Covered</span>
+                </div>
+                <div class="ffi-slide__content">
+                  <h2 class="ffi-slide__headline">While your needs change, we keep you covered.</h2>
+                  <p class="ffi-slide__body">
+                    We proactively review your situation so coverage and investments stay
+                    optimized for every stage of life.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Slide 3 -->
+              <article class="ffi-slide">
+                <div class="ffi-slide__label">
+                  <span class="ffi-badge-num">03</span>
+                  <span class="ffi-badge-text">Prepared</span>
+                </div>
+                <div class="ffi-slide__content">
+                  <h2 class="ffi-slide__headline">Build for the future you want.</h2>
+                  <p class="ffi-slide__body">
+                    From first policy to retirement planning, we align your strategy to your milestones,
+                    family, business, and legacy.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- Controls -->
+          <div class="ffi-carousel__controls">
+            <button class="ffi-btn prev" aria-label="Previous slide" type="button">‹</button>
+            <div class="ffi-dots" role="tablist" aria-label="Carousel pagination"></div>
+            <button class="ffi-btn next" aria-label="Next slide" type="button">›</button>
           </div>
         </div>
-        <!-- Controls -->
-        <div class="ffi-carousel__controls">
-          <button class="ffi-btn prev" aria-label="Previous slide" type="button">‹</button>
-          <div class="ffi-dots" role="tablist" aria-label="Carousel pagination"></div>
-          <button class="ffi-btn next" aria-label="Next slide" type="button">›</button>
-        </div>
-      </div>
     </section>
 
     <!-- ================= Contact CTA (clean, single-column) ================= -->
@@ -304,6 +356,5 @@
     }
   })();
 </script>
-
 
 {% endblock %}
