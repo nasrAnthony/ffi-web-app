@@ -3919,3 +3919,7 @@ img { max-width: 100%; height: auto; }
     justify-content: center;
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
