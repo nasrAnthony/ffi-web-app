@@ -421,7 +421,7 @@ body {
 
 /* Right content */
 .ffi-slide__headline_quote {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.2;
   color: #243029;
   margin: 0 0 .75rem;
@@ -430,7 +430,7 @@ body {
 .ffi-slide__body {
   max-width: 56ch;
   color: #243029;
-  font-size: 1.30rem;
+  font-size: 1.7rem;
   line-height: 1.7;
   margin: 0;
 }
@@ -814,7 +814,7 @@ body {
 
 .carousel-title {
   font-family: "Times New Roman", Times, serif;
-  font-size: clamp(2.2rem, 4vw, 3rem);  /* larger than before */
+  font-size: clamp(3rem, 4vw, 3rem);  /* larger than before */
   font-weight: 700;                     /* stronger weight */
   color:var(--fs-accent);
   margin-bottom: .8rem;
@@ -823,7 +823,7 @@ body {
 .carousel-sub {
   max-width: 640px;
   margin: 0 auto;
-  font-size: 1.30rem;
+  font-size: 1.7rem;
   color: #555;
   line-height: 1.6;
 }
@@ -1616,7 +1616,7 @@ body {
 /* left copy — deblur + rise */
 .ins-intro__copy{
   color: #ffffff;
-  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  font-size: clamp(1.6rem, 1.2vw, 1.15rem);
   line-height: 1.65;
   opacity: 0;
   transform: translateY(14px);
@@ -1957,11 +1957,13 @@ body {
   line-height:1.1;
   color:#fff;
 }
-.page-insurance .hero-sub{ margin:0 0 1rem; opacity:.92; color:#fff; }
+.page-insurance .hero-sub{ margin:0 0 1rem; opacity:.92; color:#fff;}
 .page-insurance .hero-ctas{ display:flex; gap:.75rem; flex-wrap:wrap; }
 .page-insurance .btn-hero{ background:#fff; color:#102B49; }
 .page-insurance .btn-outline.btn-outline--light{ border-color:#fff; color:#fff; }
-
+.hero-sub-text{
+  margin:0 0 1rem; opacity:.92; color:#fff; font-size:clamp(1rem, 2vw, 1.5rem);
+}
 /* ---------- SECTION TITLES ---------- */
 .page-insurance .section-title{
   margin:0 0 .75rem;
@@ -1990,7 +1992,7 @@ body {
 }
 .page-insurance .ins-card__icon{ width:36px; height:36px; opacity:.9; }
 .page-insurance .ins-card__title{ margin:.6rem 0 .3rem; font-size: clamp(1.15rem, 1.6vw, 1.35rem); }
-.page-insurance .ins-card__list{ margin:0 0 .6rem; color:#3a5165; padding-left:1.1rem; }
+.page-insurance .ins-card__list{ margin:0 0 .6rem; color:#3a5165; padding-left:1.1rem; font-size: clamp(1rem, 1.6vw, 1.3rem);}
 .page-insurance .ins-card__link{ color:#0f2a43; font-weight:700; text-decoration:none; }
 
 /* ---------- QUICK GUIDE (white) ---------- */
@@ -2323,8 +2325,8 @@ body {
                       calc(var(--ny,0) * var(--side,1) * 28px));
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.hwwv-title{ margin:0 0 .2rem; font-weight:800; color:#0f2a43; font-family:"Times New Roman", Times, serif; }
-.hwwv-text{ margin:0; color:#3a5165; }
+.hwwv-title{ margin:0 0 .2rem; font-weight:800; color:#0f2a43; font-family:"Times New Roman", Times, serif; font-size: clamp(1.6rem, 1.1vw, 1.1rem) }
+.hwwv-text{ margin:0; color:#3a5165; font-size: clamp(1.6rem, 1.1vw, 1.1rem);}
 .hwwv-node.is-active .hwwv-card{ border-color:#102B49; box-shadow:0 14px 28px rgba(17,39,61,.14); }
 
 /* Mobile: stack */
@@ -2414,7 +2416,7 @@ body {
   margin: 0 0 1rem;
   padding-left: 1.1rem;
   color: #3a5165;
-  font-size: clamp(1rem, 1.1vw, 2rem);
+  font-size: clamp(1.4rem, 1.1vw, 2rem);
   line-height: 1.8;  /* increases vertical spacing inside bullets */
   margin-top: 2rem;
 }
@@ -2731,7 +2733,7 @@ body {
   margin: 0;
   color:#3a5165;             /* body slate from your app */
   line-height:1.7;
-  font-size: clamp(1.5rem, 1.2vw, 1.075rem);
+  font-size: clamp(2rem, 1.2vw, 1.075rem);
 }
 
 /* Optional: center the big headline on wide screens */
@@ -3929,4 +3931,13 @@ img { max-width: 100%; height: auto; }
   .no-wrap {
     white-space: normal;
   }
+}
+
+/* Body text — larger, comfortable reading */
+.fs-body-homepage {
+  font-size: clamp(1.9rem, 1.25vw, 1.2rem); /* was ~1rem */
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: #000000;
+  max-width: 50ch;
 }
