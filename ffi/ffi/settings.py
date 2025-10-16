@@ -21,13 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rulnag_=h^la16&#(k20u)5=3lo7f@m7^alo#ne@nv@xugdp(g'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = []
-
 
 MESSAGE_TAGS = {
     messages.DEBUG: "secondary",
@@ -132,7 +131,22 @@ STATICFILES_DIRS = [BASE_DIR / "app" / "styles"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-DEFAULT_FROM_EMAIL = "Family First Insurance <anthonynasr29@gmail.com>"
+INTERNAL_CONTACT = "anthonynasr29@gmail.com"
+DEFAULT_FROM_EMAIL = "Family First Insurance <anthonyjnasr29@gmail.com>"
 GMAIL_TOKEN_PATH = os.environ.get("GMAIL_TOKEN_PATH", "/tools/gmail_token.json")
 
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = True                      # redirect http -> https
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000                  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://familyfirstinsurances.ca",
+    "https://familyfirstinsurances.ca",
+]
