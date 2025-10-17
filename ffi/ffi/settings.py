@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,15 +128,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "app" / "styles"]
+STATICFILES_DIRS = [BASE_DIR / "app" / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INTERNAL_CONTACT = "anthonynasr29@gmail.com"
-DEFAULT_FROM_EMAIL = "Family First Insurance <anthonyjnasr29@gmail.com>"
+INTERNAL_CONTACT = os.environ.get("INTERNAL_CONTACT")
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 GMAIL_TOKEN_PATH = os.environ.get("GMAIL_TOKEN_PATH", "/tools/gmail_token.json")
 
 
