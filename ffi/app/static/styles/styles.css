@@ -3942,7 +3942,7 @@ img { max-width: 100%; height: auto; }
   max-width: 50ch;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .fs-body-homepage {
     font-size: 1.2rem;
     line-height: 1.5;
