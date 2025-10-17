@@ -3941,3 +3941,48 @@ img { max-width: 100%; height: auto; }
   color: #000000;
   max-width: 50ch;
 }
+
+@media (max-width: 700px) {
+  .fs-body-homepage {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .fs-heading{
+    font-size:2rem;
+  }
+  .ffi-slide__headline_quote{
+    font-size:1.2rem;
+  }
+  .carousel-sub{
+    font-size:1.2rem;
+  }
+  .ffi-slide__body{
+    font-size:1.2rem;
+  }
+  .hwwv-text{
+    font-size:1.2rem;
+  }
+  .fs-body {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+  .wl-a{
+    font-size:1.25rem;
+  }
+  .why-lede{
+    font-size:1.2rem;
+  }
+  .why-points{
+    font-size: 1.1rem;
+  }
+  .wl-q{
+    font-size:2.0rem;
+  }
+  .ins-intro__copy{
+    font-size:1.1rem;
+  }
+  .ins-intro__headline{
+    font-size:2.0rem;
+  }
+}
