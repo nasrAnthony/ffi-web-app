@@ -3986,3 +3986,51 @@ img { max-width: 100%; height: auto; }
     font-size:2.0rem;
   }
 }
+
+/* === MOBILE: stop nested scroll + overflow in the whole-life split === */
+@media (max-width: 1000px) {
+  /* Ensure the section stacks and never creates a horizontal scroller */
+  .feature-split .fs-wrap { overflow-x: hidden; } /* belt-and-suspenders */
+
+  /* Make the row a single column (card over photos) */
+  .feature-split .fs-row { grid-template-columns: 1fr; justify-items: center; }
+
+  /* Photo cluster: allow it to shrink; no fixed min-width or forced aspect */
+  .feature-split .wl-photos {
+    width: 100%;
+    max-width: 320px;     /* keep it neat; adjust if you like */
+    min-width: 0;         /* <— important: kill the 320px hard floor */
+    aspect-ratio: auto;   /* let height be content-driven */
+    overflow: visible;    /* ensure no inner scrolling context */
+  }
+
+  /* Make each photo flow normally (no absolute positioning or transforms) */
+  .feature-split .wl-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+  /* If specific variants were offset, neutralize them too */
+  .feature-split .wl-photo--g,
+  .feature-split .wl-photo--h { inset: auto; transform: none; }
+
+  .feature-split .wl-photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Card: keep height natural and avoid internal scroll */
+  .feature-split .fs-card {
+    height: auto !important;
+    max-width: 420px;
+    width: 100%;
+    overflow: visible; /* don’t create its own scroll box */
+  }
+}
+
+/* Optional: if ANY element accidentally becomes scrollable, don't let it “steal” the page scroll */
+.feature-split * { overscroll-behavior: contain; }

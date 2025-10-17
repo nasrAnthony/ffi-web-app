@@ -357,4 +357,33 @@
   })();
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Only reorder on mobile / small screens
+  if (window.innerWidth <= 1000) {
+    const track = document.querySelector(".brand-rail__track");
+    if (!track) return;
+
+    const items = Array.from(track.children);
+
+    // Identify specific logos by filename
+    const bmo   = items.find(li => li.querySelector("img[src*='bmo_logo']"));
+    const manu  = items.find(li => li.querySelector("img[src*='manu_logo']"));
+    const rbc   = items.find(li => li.querySelector("img[src*='rbc_logo']"));
+    const sun   = items.find(li => li.querySelector("img[src*='sunlife_logo']"));
+    const fore  = items.find(li => li.querySelector("img[src*='forester_logo']"));
+    const ia    = items.find(li => li.querySelector("img[src*='ia_logo']"));
+
+    // Put the logos in your preferred mobile order
+    const newOrder = [bmo, manu, rbc, sun, fore, ia];
+
+    // Add the rest (any logos not already listed)
+    const remaining = items.filter(li => !newOrder.includes(li));
+
+    // Rebuild the list
+    track.innerHTML = "";
+    [...newOrder, ...remaining].forEach(li => track.appendChild(li));
+  }
+});
+</script>
 {% endblock %}

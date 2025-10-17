@@ -288,53 +288,62 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const svg   = document.querySelector('.hwwv-svg');
-  const path  = svg?.querySelector('#hwwv-path');   // progress stroke
-  const track = svg?.querySelector('#hwwv-track');  // geometry twin
+  const path  = svg?.querySelector('#hwwv-path');
+  const track = svg?.querySelector('#hwwv-track');
   const nodes = Array.from(document.querySelectorAll('.hwwv-node'));
   const wrap  = document.querySelector('.hwwv');
-  if (!svg || !path || !track || !nodes.length) return;
 
-  // account for preserveAspectRatio="meet"
+  if (!svg || !path || !track || !nodes.length || !wrap) return;
+
+  // Keep stroke thickness visible while animating
+  path.style.strokeDasharray = 1;
+  path.style.strokeDashoffset = 1;
+
   const vb = svg.viewBox.baseVal; // 0 0 600 900
+
   function positionNodes(){
     const rect = svg.getBoundingClientRect();
-    const s  = Math.min(rect.width / vb.width, rect.height / vb.height);
+
+    // Bail if SVG isn't laid out yet
+    if (!rect.width || !rect.height) return;
+
+    const s    = Math.min(rect.width / vb.width, rect.height / vb.height);
     const offX = (rect.width  - vb.width  * s) / 2;
     const offY = (rect.height - vb.height * s) / 2;
-    const L = track.getTotalLength();
+    const L    = track.getTotalLength();
 
-    nodes.forEach(n=>{
-      let f = (parseFloat(n.dataset.frac) || 0) % 1; if (f < 0) f += 1;
+    nodes.forEach(n => {
+      let f = (parseFloat(n.dataset.frac) || 0) % 1;
+      if (f < 0) f += 1;
+
       const p  = track.getPointAtLength(L * f);
       const p2 = track.getPointAtLength(Math.min(L, L * (f + 0.001)));
       const tx = p2.x - p.x, ty = p2.y - p.y;
-      const nx = -ty, ny = tx; const len = Math.hypot(nx, ny) || 1;
-      const ux = nx/len, uy = ny/len;
 
+      // card offset normal (perpendicular) for side preference
+      const nx = -ty, ny = tx, len = Math.hypot(nx, ny) || 1;
+      const ux = nx / len, uy = ny / len;
+
+      // Position the node (centered)
       n.style.left = (offX + p.x * s) + 'px';
       n.style.top  = (offY + p.y * s) + 'px';
+
+      // Expose unit normal & side for CSS-based nudge if desired
       n.style.setProperty('--nx', ux);
       n.style.setProperty('--ny', uy);
       n.style.setProperty('--side', (n.dataset.side === 'left') ? -1 : 1);
 
-      if (!n.hasAttribute('tabindex')) n.setAttribute('tabindex','0'); // keyboard focusable
+      if (!n.hasAttribute('tabindex')) n.setAttribute('tabindex','0');
       n.setAttribute('role','button');
       n.setAttribute('aria-label', n.querySelector('.hwwv-title')?.textContent?.trim() || 'Step');
     });
   }
-  positionNodes();
-  window.addEventListener('resize', positionNodes);
-
-  // progress control (hover/focus)
-  path.style.strokeDasharray = 1;
-  path.style.strokeDashoffset = 1;
 
   function setActiveByFrac(frac){
     const clamped = Math.max(0, Math.min(1, frac));
     if (!reduce) path.style.transition = 'stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1)';
     path.style.strokeDashoffset = 1 - clamped;
 
-    // highlight closest node
     let best = 0, bestDiff = Infinity;
     nodes.forEach((n,i)=>{
       const f = parseFloat(n.dataset.frac) || 0;
@@ -344,21 +353,31 @@
     nodes.forEach((n,i)=> n.classList.toggle('is-active', i === best));
   }
 
-  // Hover & keyboard focus follow
+  // Reposition on load, resize, orientation change, and whenever the SVG element resizes
+  positionNodes();
+  window.addEventListener('resize', positionNodes, { passive: true });
+  window.addEventListener('orientationchange', positionNodes, { passive: true });
+
+  // In case fonts/layout settle after first paint
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(positionNodes);
+  }
+  window.addEventListener('load', positionNodes);
+
+  // Observe the SVG box specifically (safer on mobile browser UI collapse/expand)
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(positionNodes);
+    ro.observe(svg);
+  }
+
+  // Interactions
   nodes.forEach(n=>{
     const go = ()=> setActiveByFrac(parseFloat(n.dataset.frac) || 0);
     n.addEventListener('mouseenter', go);
-    n.addEventListener('focus', go);     // keyboard navigation
-    // keep click as a fallback if you wish:
-    // n.addEventListener('click', go);
+    n.addEventListener('focus', go);
   });
 
-  // Reset to the first node when pointer leaves the zone
-  wrap.addEventListener('mouseleave', ()=>{
-    setActiveByFrac(parseFloat(nodes[0].dataset.frac) || 0);
-  });
-
-  // initial state
+  // Initial highlight
   setActiveByFrac(parseFloat(nodes[0].dataset.frac) || 0);
 })();
 </script>
