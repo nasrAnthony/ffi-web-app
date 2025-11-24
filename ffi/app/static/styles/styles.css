@@ -81,9 +81,9 @@ body {
 
 .hero-content {
   position: absolute;
-  top: 35%;          /* was 50%, move higher */
+  top: clamp(12vh, 22vh, 30vh);
   left: 48%;
-  transform: translate(-48%, -35%);  /* adjust translate to match */
+  transform: translateX(-50%);  /* no vertical translate */
   text-align: center;
   color: white;
   z-index: 2;
@@ -100,6 +100,7 @@ body {
   line-height: 1.6;
   margin-top: 0.75rem;  /* spacing below slogan */
 }
+
 
 /* INFO SECTION */
 .info-section {
@@ -2940,15 +2941,27 @@ body {
   z-index:2;
 }
 
-/* ===== Responsive stacking ===== */
 @media (max-width: 980px){
   .wl-split{ grid-template-columns: 1fr; }
   .wl-right{ justify-self:center; }
   .wl-photos{ width:min(80vw, 520px); aspect-ratio: 4 / 5; }
 
   /* gentler overlap on small screens */
-  .wl-photo--a{ width:72%; height:70%; left:2%; top:0; transform:None; }
-  .wl-photo--b{ width:72%; height:70%; right:0; bottom:-2%; transform:None; }
+  .wl-photo--a{
+    width:72%;
+    height:70%;
+    left:2%;
+    top:0;
+    transform:none;
+  }
+
+  .wl-photo--b{
+    width:72%;
+    height:70%;
+    right:0;
+    bottom:-2%;
+    transform:none;
+  }
 }
 
 /* keep your brand headline measure tweak */
@@ -2957,6 +2970,36 @@ body {
   .wl-display{ max-width: clamp(40ch, 60%, 52ch); text-wrap: balance; }
 }
 
+@media (max-width: 980px){
+  /* Investments pages – tighten mobile spacing for image sections */
+  #rrsp .wl-photo--a,
+  #tfsa .wl-photo--f,
+  #overview .wl-photo--a,
+  #tax .wl-photo--f,       /* Non-registered tax section */
+  #tax .wl-photo--a,       /* Corporate tax section */
+  #accounts .wl-photo--f,  /* Corporate accounts section */
+  #dividends .wl-photo--a, /* Corporate dividends section */
+  #liquidity .wl-photo--f  /* Corporate liquidity section */
+  {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+  }
+
+  #rrsp.wl-plain,
+  #tfsa.wl-plain,
+  #overview.wl-plain,
+  #tax.wl-plain,
+  #accounts.wl-plain,
+  #dividends.wl-plain,
+  #liquidity.wl-plain{
+    padding: 1.25rem 0;
+  }
+}
 
 /* Small header layout helpers (carousel uses your provided CSS) */
 .wl-kf {
@@ -3432,19 +3475,30 @@ body {
 .nav-toggle:focus { outline: 2px solid rgba(255,255,255,.45); outline-offset: 2px; }
 
 /* 3 bars */
-.nav-toggle__bar,
-.nav-toggle__bar::before,
-.nav-toggle__bar::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
+.nav-toggle__bar {
+  position: relative;
+  display: block;
+  width: 60%;
   height: 2px;
+  margin: 0 auto;
   background: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.25);
   transition: transform .25s ease, opacity .2s ease;
 }
-.nav-toggle__bar { top: 50%; transform: translateY(-50%); }
+
+/* top & bottom bars */
+.nav-toggle__bar::before,
+.nav-toggle__bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  transition: transform .25s ease, opacity .2s ease, top .25s ease;
+}
+
 .nav-toggle__bar::before { top: -8px; }
 .nav-toggle__bar::after  { top: 8px; }
 
@@ -4032,5 +4086,62 @@ img { max-width: 100%; height: auto; }
   }
 }
 
-/* Optional: if ANY element accidentally becomes scrollable, don't let it “steal” the page scroll */
-.feature-split * { overscroll-behavior: contain; }
+/* ===== CONTACT PAGE OVERRIDES ===== */
+
+/* 1) Kill the huge 125vh hero gap on the contact page */
+body:has(.hero-content--contact) .hero-section {
+  height: 0;
+  background: none;
+}
+
+/* 2) Put hero background on <main> and push content below navbar */
+body:has(.hero-content--contact) main {
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0) 65%, #102b49c4 100%),
+    url("../images/banner9.jpg") no-repeat center top / cover;
+  padding-top: 7rem;          /* distance under navbar on desktop */
+  padding-bottom: 3rem;       /* space before footer */
+}
+
+/* 3) Contact hero content in normal flow, centered */
+.hero-content.hero-content--contact {
+  position: static !important;
+  top: auto;
+  left: auto;
+  transform: none;
+
+  max-width: 1100px;
+  margin: 0 auto 0;
+  padding: 0 1.5rem;
+}
+
+/* ===== PHONE / SMALL TABLET TWEAKS ===== */
+@media (max-width: 768px) {
+  body:has(.hero-content--contact) main {
+    padding-top: 6rem;        /* slightly tighter but still clears mobile nav */
+    padding-bottom: 2.5rem;
+    background-position: center top;
+  }
+
+  .hero-content.hero-content--contact {
+    max-width: 100%;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;          /* less horizontal padding on small screens */
+  }
+
+  /* Optional: tighten the card a bit on phones */
+  .contact-form--card {
+    padding: 1.5rem 1rem;
+  }
+}
+/* CONTACT PAGE ONLY: bring content closer to "Contact Us Today" */
+body:has(.contact-page-root) .hero-section {
+  height: 70vh;      /* adjust 60–80vh to taste */
+}
+
+@media (max-width: 768px) {
+  body:has(.contact-page-root) .hero-section {
+    height: 60vh;
+  }
+}
+

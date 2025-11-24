@@ -90,7 +90,7 @@ def resources_view(request):
     return render(request, "app/resources_page.html")
 
 
-INTERNAL_CONTACT = "epic2battle3@gmail.com"
+INTERNAL_CONTACT = settings.INTERNAL_CONTACT
 FROM_IDENTITY    = settings.DEFAULT_FROM_EMAIL
 
 def contact_view(request):

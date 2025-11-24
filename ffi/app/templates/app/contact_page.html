@@ -4,49 +4,30 @@
 {% block title %}Family First Insurance – Home{% endblock %}
 
 {% block content %}
-
+<div class="contact-page-root">
   <!-- ================= Hero ================= -->
   <div class="hero-content">
     <img class="reveal reveal--hero hero-logo"
          src="{% static 'images/logo.png' %}"
          alt="Family First Insurance"
          loading="eager" decoding="async" />
-    <h1 class="reveal reveal--hero"
-        data-anim="down" data-duration="2500">Contact Us Today</h1>
   </div>
 
 <!-- ===== Keep the hero as the page background for this band ===== -->
 <section class="after-hero-bg">
   <div class="after-hero-surface">
-    <section class="ins-intro reveal"
-             data-anim="up" data-duration="900"
-             aria-label="Life insurance intro">
-      <div class="ins-intro__wrap">
-        <div class="ins-intro__copy">
-          <p>
-            Complete the form below with your details and a brief message for us.
-            One of our experienced team members will get back to you as soon as possible.
-          </p>
-        </div>
-
-        <div class="ins-intro__rule" aria-hidden="true"></div>
-        <h2 class="ins-intro__headline">
-          <span class="u-underline">Get in touch</span>
-        </h2>
-      </div>
-    </section>
 
     <!-- ================= Contact CTA (clean, single-column) ================= -->
     <section class="contact-cta contact-cta--clean">
       <div class="contact-cta__wrap">
 
-        <header class="contact-cta__intro reveal"
+        <header class="contact-cta__intro"
                 data-anim="up" data-duration="900">
           <h2 class="contact-cta__title">CONTACT FORM</h2>
         </header>
 
         <!-- Form card -->
-        <div class="contact-cta__center reveal"
+        <div class="contact-cta__center"
              data-anim="up" data-delay="150" data-duration="900">
 
           <form id="contact-form"
@@ -124,6 +105,7 @@
 
   </div>
 </section>
+</div>
 
 <script>
   (function () {
