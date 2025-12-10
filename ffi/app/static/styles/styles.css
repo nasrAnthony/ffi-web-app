@@ -2962,6 +2962,22 @@ body {
     bottom:-2%;
     transform:none;
   }
+
+  .wl-photo--k{
+    width:72%;
+    height:70%;
+    left:0;          /* bring it back into view */
+    top:0;           /* move it up in the frame */
+    transform:none;
+  }
+
+  .wl-photo--k{
+    width:72%;
+    height:70%;
+    left:0;
+    top:-10%;
+    transform:none;
+  }
 }
 
 /* keep your brand headline measure tweak */
@@ -3771,7 +3787,6 @@ body {
     margin-top: 1rem;
     white-space: nowrap;
   }
-  
 }
 
 
@@ -3867,6 +3882,10 @@ body {
     display: block;
     border-radius: 10px;    /* keeps a tidy look */
   }
+
+  .feature-split .wl-photo--k img{
+    object-position: center 80%;   /* try 70–90% until hands look right */
+  }
 }
 
 /* === Mobile-only hero background fix (no desktop changes) === */
@@ -3952,6 +3971,10 @@ html, body { overflow-x: clip; }          /* better than hidden on iOS */
     object-fit: cover;
     object-position: center;
     display: block;
+  }
+
+  .feature-split .wl-photo--k img{
+    object-position: center 70%;   /* try 70–90% until hands look right */
   }
 }
 
@@ -4144,4 +4167,13 @@ body:has(.contact-page-root) .hero-section {
     height: 60vh;
   }
 }
+
+/* Phone-only: lift Peter's photo so crossed hands show */
+@media (max-width: 768px) {
+  .wl-photos .wl-photo--k {
+    top: -22%;   /* tweak: try -18% to -30% until hands are perfect */
+  }
+}
+
+
 

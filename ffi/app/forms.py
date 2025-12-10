@@ -50,7 +50,7 @@ class ContactForm(forms.Form):
             ("General Question", "General Question"),
             ("Insurance", "Insurance"),
             ("Investments", "Investments"),
-            ("Request a Quote", "Request a Quote"),
+            ("Request Financial Planning", "Request Financial Planning"),
         ],
         widget=forms.Select(attrs={"id": "cf-topic", "aria-label": "Topic"}),
     )
