@@ -1,4 +1,6 @@
 from django import forms
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV2Checkbox
 
 class ContactForm(forms.Form):
     name = forms.CharField(
@@ -64,3 +66,4 @@ class ContactForm(forms.Form):
             "required": True,
         }),
     )
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())

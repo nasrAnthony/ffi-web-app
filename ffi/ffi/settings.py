@@ -26,6 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
+RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_SECRET_KEY")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
 
@@ -48,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_recaptcha',
     'app',
 ]
 
@@ -138,19 +142,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_CONTACT = os.environ.get("INTERNAL_CONTACT")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 GMAIL_TOKEN_PATH = os.environ.get("GMAIL_TOKEN_PATH", "/tools/gmail_token.json")
-
-
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = True                      # redirect http -> https
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_HSTS_SECONDS = 31536000                  # 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-X_FRAME_OPTIONS = "DENY"
-SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://familyfirstinsurances.ca",
-    "https://familyfirstinsurances.ca",
-]

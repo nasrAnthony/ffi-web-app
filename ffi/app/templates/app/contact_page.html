@@ -4,6 +4,12 @@
 {% block title %}Family First Insurance – Home{% endblock %}
 
 {% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
 <div class="contact-page-root">
   <!-- ================= Hero ================= -->
   <div class="hero-content">
@@ -90,6 +96,13 @@
                 {% if form.message.errors %}
                   <div class="text-danger small">{{ form.message.errors }}</div>
                 {% endif %}
+              </div>
+
+              <div class="form-row">
+                  {{ form.captcha }}
+                  {% if form.captcha.errors %}
+                    <div class="text-danger small">{{ form.captcha.errors }}</div>
+                  {% endif %}
               </div>
 
               <div class="form-actions">
