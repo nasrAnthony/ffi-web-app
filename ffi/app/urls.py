@@ -24,5 +24,11 @@ urlpatterns = [
     path("about-us/", views.about_view, name="about"),
     path("resources/", views.resources_view, name="resources"),
     path("contact-us/", views.contact_view, name="contact"),
-    path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("images/favicon.ico"))),
+    path(
+    "favicon.ico",
+    RedirectView.as_view(
+        url=staticfiles_storage.url("images/favicon.ico"),
+        permanent=True
+        )
+    ),
 ]
