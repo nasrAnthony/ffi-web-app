@@ -4175,5 +4175,39 @@ body:has(.contact-page-root) .hero-section {
   }
 }
 
+.nav-phone-icon,
+.nav-phone-mobile {
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.72rem, 2vw, 1.10rem);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+  flex-shrink: 1;
+  min-width: 0;
+}
 
+.nav-phone-icon:hover,
+.nav-phone-mobile:hover {
+  color: #102B49;
+}
 
+@media (min-width: 901px) {
+  .nav-phone-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-phone-item {
+    display: none;
+  }
+
+  .nav-phone-mobile {
+    margin-left: auto;
+    margin-right: 0.5rem;
+    font-size: clamp(0.62rem, 3.2vw, 1rem);
+  }
+}
