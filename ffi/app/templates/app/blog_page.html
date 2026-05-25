@@ -1,0 +1,172 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+
+{% block title %}Blog - Family First Insurance{% endblock %}
+{% block meta_description %}Explore blog articles from Family First Insurance covering insurance, investments, and practical financial planning guidance for real-life decisions.{% endblock %}
+{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block head_extra %}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog - Family First Insurance" />
+  <meta property="og:description" content="Explore blog articles from Family First Insurance covering insurance, investments, and practical financial planning guidance." />
+  <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog - Family First Insurance" />
+  <meta name="twitter:description" content="Explore blog articles from Family First Insurance covering insurance, investments, and practical financial planning guidance." />
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Blog</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      Insights, practical guidance, and updates from the Family First Insurance team.
+    </p>
+    <div class="hero-cta">
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        SPEAK TO AN ADVISOR
+      </a>
+    </div>
+  </div>
+
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Blog introduction">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+              We use this space to share clear, approachable information on insurance, investments, and the planning decisions that shape long-term financial confidence.
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+
+          <h2 class="ins-intro__headline">
+            Fresh <span class="u-underline">insights</span>
+            <br>for real-life <span class="u-underline">decisions</span>
+          </h2>
+        </div>
+      </section>
+
+
+      <section class="blog-hub reveal" data-anim="up" data-duration="900" aria-label="Blog article listings" data-blog-hub>
+        <div class="container">
+          <div class="blog-hub__head">
+            <h2 class="section-title ins-cta__title"><span class="u-underline">Featured Articles</span></h2>
+          </div>
+
+          <div class="blog-grid">
+            {% for article in articles %}
+              <article class="blog-card">
+                <a href="/resources/blog/{{ article.slug }}/" class="blog-card__link" aria-label="Read {{ article.title }}">
+                  <div class="blog-card__media">
+                    {% if article.main_image %}
+                      <img src="{{ article.main_image.url }}" alt="{{ article.title }}" />
+                    {% else %}
+                      <div class="blog-card__media-fallback" aria-hidden="true"></div>
+                    {% endif %}
+                  </div>
+                  <div class="blog-card__body">
+                    <p class="blog-card__meta">{{ article.created_at|date:"F j, Y" }}</p>
+                    <h3 class="blog-card__title">{{ article.title }}</h3>
+                    <p class="blog-card__summary">{{ article.card_summary }}</p>
+                    <span class="blog-card__cta">Read article <span aria-hidden="true">›</span></span>
+                  </div>
+                </a>
+              </article>
+            {% empty %}
+              <div class="blog-empty" role="status" aria-live="polite">
+                <p class="blog-empty__message">Coming soon.</p>
+              </div>
+            {% endfor %}
+          </div>
+
+          <nav class="blog-pagination" aria-label="Blog pagination" data-blog-pagination>
+            {% if page_obj.has_previous %}
+              <a href="?page={{ page_obj.previous_page_number }}" class="blog-pagination__link blog-pagination__link--nav" aria-label="Previous page">
+                <span aria-hidden="true">‹</span>
+              </a>
+            {% else %}
+              <span class="blog-pagination__link blog-pagination__link--nav is-disabled" aria-disabled="true" aria-label="Previous page">
+                <span aria-hidden="true">‹</span>
+              </span>
+            {% endif %}
+
+            <span class="blog-pagination__status" aria-current="page">
+              {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}" class="blog-pagination__link blog-pagination__link--nav" aria-label="Next page">
+                <span aria-hidden="true">›</span>
+              </a>
+            {% else %}
+              <span class="blog-pagination__link blog-pagination__link--nav is-disabled" aria-disabled="true" aria-label="Next page">
+                <span aria-hidden="true">›</span>
+              </span>
+            {% endif %}
+          </nav>
+        </div>
+      </section>
+
+      <section class="ins-cta reveal" data-anim="up" data-duration="900">
+        <div class="ins-cta__wrap">
+          <h3 class="ins-cta__title">Looking for personalized guidance?</h3>
+          <a href="/contact-us/" class="btn-outline">Speak to an advisor</a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const pagePath = "/resources/blog/";
+
+      async function swapBlogHub(url, push) {
+        const currentHub = document.querySelector("[data-blog-hub]");
+        if (!currentHub) return;
+
+        currentHub.classList.add("is-loading");
+
+        try {
+          const response = await fetch(url, {
+            headers: { "X-Requested-With": "XMLHttpRequest" }
+          });
+          if (!response.ok) throw new Error("Failed to load blog page");
+
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const nextHub = doc.querySelector("[data-blog-hub]");
+          if (!nextHub) throw new Error("Missing blog hub markup");
+
+          nextHub.classList.add("in");
+          currentHub.replaceWith(nextHub);
+
+          if (push) {
+            window.history.pushState({ blogPage: true }, "", url);
+          }
+        } catch (error) {
+          window.location.href = url;
+        }
+      }
+
+      document.addEventListener("click", function (event) {
+        const link = event.target.closest("[data-blog-pagination] a");
+        if (!link) return;
+
+        const url = new URL(link.href, window.location.origin);
+        if (url.pathname !== pagePath) return;
+
+        event.preventDefault();
+        swapBlogHub(url.toString(), true);
+      });
+
+      window.addEventListener("popstate", function () {
+        if (window.location.pathname === pagePath) {
+          swapBlogHub(window.location.href, false);
+        }
+      });
+    })();
+  </script>
+{% endblock %}

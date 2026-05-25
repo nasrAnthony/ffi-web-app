@@ -32,7 +32,7 @@ RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ['familyfirstinsurances.ca', 'www.familyfirstinsurances.ca']
+ALLOWED_HOSTS = ['127.0.0.1', 'familyfirstinsurances.ca', 'www.familyfirstinsurances.ca']
 
 MESSAGE_TAGS = {
     messages.DEBUG: "secondary",
@@ -133,6 +133,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "app" / "static"]
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

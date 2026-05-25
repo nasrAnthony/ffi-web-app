@@ -10,6 +10,8 @@ urlpatterns = [
     path("insurance/critical-illness-insurance", views.critical_insurance_view, name="critical-illness-insurance"),
     path("insurance/disability-insurance", views.disability_insurance_view, name="disability-insurance"),
     path("insurance/life-insurance", views.life_insurance_view, name="life-insurance"),
+    path("insurance/corporate-insurance", views.corporate_insurance_view, name="corporate-insurance"),
+    path("insurance/business-insurance", views.corporate_insurance_view, name="business-insurance"),
     path("insurance/life-insurance/whole-life-insurance", views.whole_life_insurance_view, name="whole-life-insurance"),
     path("insurance/life-insurance/term-life-insurance", views.term_life_insurance_view, name="term-life-insurance"),
     path("insurance/life-insurance/universal-life-insurance", views.universal_life_insurance_view, name="universal-life-insurance"),
@@ -22,6 +24,8 @@ urlpatterns = [
     path("investments/registered-investments", views.registered_investments_view, name="registered-investments"),
     path("investments/rrsp-investments", views.rrsp_investments_view, name="rrsp-investments"),
     path("about-us/", views.about_view, name="about"),
+    path("resources/blog/", views.blog_view, name="blog"),
+    path("resources/blog/<slug:slug>/", views.blog_article_view, name="blog-article"),
     path("resources/", views.resources_view, name="resources"),
     path("contact-us/", views.contact_view, name="contact"),
     path(

@@ -5,11 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="google-site-verification" content="V3jtwgPNizWSSWHtkozPByOeUNlfjY2l1Dbzyw8Lbjc" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Family First Insurance{% endblock %}</title>
+    <meta
+      name="description"
+      content="{% block meta_description %}Family First Insurance provides insurance and investment guidance with clear planning support for families, professionals, and business owners.{% endblock %}"
+    />
+    <meta name="robots" content="{% block meta_robots %}index,follow{% endblock %}" />
+    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}" />
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-    <title>Family First Insurance</title>
+    {% block head_extra %}{% endblock %}
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7PRE27CJGM"></script>
     <script>
@@ -165,6 +172,7 @@
                 RESOURCES <span class="caret" aria-hidden="true"></span>
               </a>
               <ul class="dropdown" role="menu">
+                <li><a href="/resources/blog/">Blog</a></li>
                 <li><a href="/resources/">FAQs</a></li>
               </ul>
             </li>
@@ -221,6 +229,7 @@
           <div class="footer-col">
             <h4>Information</h4>
             <ul>
+              <li><a href="/resources/blog/">Blog</a></li>
               <li><a href="/resources">FAQs</a></li>
             </ul>
           </div>

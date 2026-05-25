@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.utils import timezone
 from django.conf import settings
-from django.shortcuts import render, redirect
-from .forms import ContactForm
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.shortcuts import get_object_or_404, render
+from django.utils import timezone
+
+from .forms import ContactForm
+from .models import BlogPost
 from .gmail_api import send_contact_emails
 # Create your views here.
 
@@ -74,6 +76,9 @@ def disability_insurance_view(request):
 def travel_insurance_view(request):
     return render(request, "app/insurance/travel_insurance_page.html")
 
+def corporate_insurance_view(request):
+    return render(request, "app/insurance/corporate_insurance_page.html")
+
 def group_health_insurance_view(request):
     return render(request, "app/corporate-insurance/group_health_insurance_page.html")
 
@@ -88,6 +93,23 @@ def about_view(request):
 
 def resources_view(request):
     return render(request, "app/resources_page.html")
+
+def blog_view(request):
+    articles = BlogPost.objects.prefetch_related("sections").all()
+    paginator = Paginator(articles, 6)
+    page_obj = paginator.get_page(request.GET.get("page"))
+    return render(
+        request,
+        "app/blog_page.html",
+        {
+            "articles": page_obj,
+            "page_obj": page_obj,
+        },
+    )
+
+def blog_article_view(request, slug):
+    article = get_object_or_404(BlogPost.objects.prefetch_related("sections"), slug=slug)
+    return render(request, "app/blog_article_page.html", {"article": article})
 
 
 INTERNAL_CONTACT = settings.INTERNAL_CONTACT
@@ -151,4 +173,3 @@ def registered_investments_view(request):
 
 def rrsp_investments_view(request):
     return render(request, "app/investment/rrsp_investments_page.html")
-

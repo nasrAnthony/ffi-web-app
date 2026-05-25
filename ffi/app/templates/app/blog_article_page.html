@@ -1,0 +1,96 @@
+{% extends "app/base_page.html" %}
+{% load static %}
+
+{% block title %}{{ article.title }} - Family First Insurance{% endblock %}
+{% block meta_description %}{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}{% endblock %}
+{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}
+{% block head_extra %}
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ article.title }} - Family First Insurance" />
+  <meta property="og:description" content="{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}" />
+  <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+  {% if article.main_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}" />
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}" />
+  {% else %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ article.title }} - Family First Insurance" />
+  <meta name="twitter:description" content="{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": "{{ request.build_absolute_uri|escapejs }}",
+      "headline": "{{ article.title|escapejs }}",
+      "description": "{{ article.summary|default:article.card_summary|striptags|truncatechars:160|escapejs }}",
+      "datePublished": "{{ article.created_at|date:'c' }}",
+      "dateModified": "{{ article.updated_at|date:'c' }}",
+      "author": {
+        "@type": "Organization",
+        "name": "Family First Insurance"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Family First Insurance",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}"
+        }
+      }{% if article.main_image %},
+      "image": [
+        "{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}"
+      ]{% endif %}
+    }
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="hero-content">
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">{{ article.title }}</h1>
+  </div>
+
+  <section class="after-hero-bg">
+    <div class="after-hero-surface">
+      <article class="blog-article reveal" data-anim="up" data-duration="900" aria-label="{{ article.title }}">
+        <div class="container blog-article__wrap">
+          <a href="/resources/blog/" class="blog-back-link">‹ Back to blog</a>
+
+          <div class="blog-article__hero">
+            {% if article.main_image %}
+              <img src="{{ article.main_image.url }}" alt="{{ article.title }}" />
+            {% else %}
+              <div class="blog-article__hero-fallback" aria-hidden="true"></div>
+            {% endif %}
+          </div>
+
+          <div class="blog-article__content">
+            {% if article.summary %}
+              <p class="blog-article__lead">{{ article.summary }}</p>
+            {% endif %}
+            {% for section in article.sections.all %}
+              <section class="blog-article__section">
+                <h2>{{ section.heading }}</h2>
+                {{ section.body|linebreaks }}
+              </section>
+            {% empty %}
+              <p class="blog-article__empty">
+                This article is being prepared and will be available soon.
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+
+      <section class="ins-cta reveal" data-anim="up" data-duration="900">
+        <div class="ins-cta__wrap">
+          <h3 class="ins-cta__title">Want more information?</h3>
+          <a href="/contact-us/" class="btn-outline">Speak to an advisor</a>
+        </div>
+      </section>
+    </div>
+  </section>
+{% endblock %}

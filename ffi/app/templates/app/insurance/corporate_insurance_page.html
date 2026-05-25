@@ -1,86 +1,86 @@
 {% extends "app/base_page.html" %}
 {% load static %}
-{% block title %}Insurance - Family First Insurance{% endblock %}
-{% block content %}
 
+{% block title %}Corporate Insurance - Family First Insurance{% endblock %}
+
+{% block content %}
   <div class="hero-content">
-    <img class=" reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
-    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Insurance Solutions For You</h1>
+    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">Corporate Insurance</h1>
+    <p class="reveal" data-anim="down" data-delay="140" data-duration="2300">
+      Practical protection strategies for owners, partners, and growing teams.
+    </p>
     <div class="hero-cta">
-      <a href="/contact-us/" class="btn-hero reveal reveal--fade"
-        data-duration="3000" aria-label="Contact us now">
-        REACH OUT TO SPEAK TO AN ADVISOR
+      <a href="/contact-us/" class="btn-hero reveal reveal--fade" data-duration="3000" aria-label="Contact us now">
+        SPEAK TO AN ADVISOR
       </a>
     </div>
   </div>
 
   <section class="after-hero-bg">
     <div class="after-hero-surface">
-            <section class="feature-split feature-split--in-surface">
-      <div class="fs-wrap">
-        <div class="fs-head">
-          <h2 class="fs-heading">
-            Build your peace of mind.<br>
-            <span class="fs-highlight">Protect what matters to you.</span>
+      <section class="ins-intro reveal" data-anim="up" data-duration="900" aria-label="Corporate insurance introduction">
+        <div class="ins-intro__wrap">
+          <div class="ins-intro__copy">
+            <p>
+              Clear planning for the people, partnerships, and benefits that keep your business moving.
+            </p>
+          </div>
+
+          <div class="ins-intro__rule" aria-hidden="true"></div>
+
+          <h2 class="ins-intro__headline">
+            Protect the <span class="u-underline">business</span>
+            <br>you've worked hard to <span class="u-underline">build</span>
           </h2>
         </div>
-        <article class="fs-row">
-          <div class="fs-card">
-            <h3 class="fs-title">Insurance</h3>
-            <p class="fs-body">
-              Our personalized approach ensures that you receive the best coverage and support
-              for your unique individual or business needs.
-            </p>
-            <a href="/insurance/" class="fs-link">Learn more <span aria-hidden="true">›</span></a>
+      </section>
+
+      <main class="page-insurance">
+        <section class="ins-cats reveal" data-anim="up" data-duration="900" aria-label="Corporate insurance solutions">
+          <div class="container">
+            <h2 class="section-title"><span class="u-underline">Explore corporate solutions</span></h2>
+            <div class="ins-grid">
+              <article class="ins-card">
+                <h3 class="ins-card__title">Group Health Insurance</h3>
+                <p class="ins-card__text">
+                  Support your team with benefits that help you attract and retain great people.
+                </p>
+                <a class="ins-card__link" href="/insurance/group-health-insurance">LEARN MORE ›</a>
+              </article>
+
+              <article class="ins-card">
+                <h3 class="ins-card__title">Partnership Insurance</h3>
+                <p class="ins-card__text">
+                  Put a funded plan in place to protect ownership transitions and business continuity.
+                </p>
+                <a class="ins-card__link" href="/insurance/partnership-insurance">LEARN MORE ›</a>
+              </article>
+
+              <article class="ins-card">
+                <h3 class="ins-card__title">Key Person Insurance</h3>
+                <p class="ins-card__text">
+                  Create financial breathing room if a critical leader or employee is unexpectedly gone.
+                </p>
+                <a class="ins-card__link" href="/insurance/key-person-insurance">LEARN MORE ›</a>
+              </article>
+            </div>
           </div>
-          <figure class="fs-media">
-            <img src="{% static 'images/duo-insurance.png' %}" alt="Parent hugging child">
-          </figure>
-        </article>
-        <article class="fs-row fs-row--invert">
-          <figure class="fs-media">
-            <img src="{% static 'images/duo-investments.png' %}" alt="Parachute canopy from below">
-          </figure>
-          <!-- add the modifier here -->
-          <div class="fs-card fs-card--pull-left">
-            <h3 class="fs-title">Investments</h3>
-            <p class="fs-body">
-              Tailored strategies that align with your goals—so your money works for you,
-              today and for the long term.
-            </p>
-            <a href="/investments/" class="fs-link">Learn more <span aria-hidden="true">›</span></a>
+        </section>
+
+        <section class="advisor-band reveal" data-anim="up" data-duration="900" aria-label="Talk to an advisor">
+          <div class="container">
+            <div class="advisor-cta">
+              <h2 class="advisor-cta__title"><span class="u-underline">Speak to us about your business</span></h2>
+              <p class="advisor-cta__sub">We’ll help you choose the right structure for your team, partners, and long-term plans.</p>
+
+              <div class="advisor-cta__actions">
+                <a href="/contact-us/" class="btn-outline" aria-label="Start a conversation">Speak to an advisor</a>
+              </div>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
+        </section>
+      </main>
     </div>
   </section>
-
-
-  <script>
-  /* Scroll reveal with durations & delays */
-  (function () {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const els = document.querySelectorAll('.reveal');
-    if (!els.length) return;
-
-    els.forEach(el => {
-      const d  = el.getAttribute('data-delay');
-      const du = el.getAttribute('data-duration');
-      if (d)  el.style.setProperty('--rv-delay', `${parseInt(d,10)}ms`);
-      if (du) el.style.setProperty('--rv-dur',   `${parseInt(du,10)}ms`);
-    });
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(({ isIntersecting, target }) => {
-        if (isIntersecting) { target.classList.add('in'); io.unobserve(target); }
-      });
-    }, { threshold: 0.14, rootMargin: '0px 0px -10% 0px' });
-
-    els.forEach(el => io.observe(el));
-  })();
-</script>
-
-
 {% endblock %}
