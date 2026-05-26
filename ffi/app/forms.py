@@ -2,6 +2,8 @@ from django import forms
 from django_recaptcha.fields import ReCaptchaField
 from django_recaptcha.widgets import ReCaptchaV2Checkbox
 
+from .models import BlogPost
+
 class ContactForm(forms.Form):
     name = forms.CharField(
         label="Full name",
@@ -67,3 +69,22 @@ class ContactForm(forms.Form):
         }),
     )
     captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
+
+
+class BlogBatchUploadForm(forms.Form):
+    batch_file = forms.FileField(
+        label="Blog batch JSON",
+        help_text="Upload a .json file matching the sample schema for up to 10 posts.",
+    )
+
+    def clean_batch_file(self):
+        batch_file = self.cleaned_data["batch_file"]
+        if not batch_file.name.lower().endswith(".json"):
+            raise forms.ValidationError("Please upload a .json file.")
+        return batch_file
+
+
+class BlogPostAdminForm(forms.ModelForm):
+    class Meta:
+        model = BlogPost
+        fields = "__all__"

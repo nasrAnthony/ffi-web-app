@@ -95,7 +95,9 @@ def resources_view(request):
     return render(request, "app/resources_page.html")
 
 def blog_view(request):
-    articles = BlogPost.objects.prefetch_related("sections").all()
+    articles = BlogPost.objects.prefetch_related("sections").filter(
+        status=BlogPost.Status.PUBLISHED
+    )
     paginator = Paginator(articles, 6)
     page_obj = paginator.get_page(request.GET.get("page"))
     return render(
@@ -108,7 +110,12 @@ def blog_view(request):
     )
 
 def blog_article_view(request, slug):
-    article = get_object_or_404(BlogPost.objects.prefetch_related("sections"), slug=slug)
+    article = get_object_or_404(
+        BlogPost.objects.prefetch_related("sections").filter(
+            status=BlogPost.Status.PUBLISHED
+        ),
+        slug=slug,
+    )
     return render(request, "app/blog_article_page.html", {"article": article})
 
 

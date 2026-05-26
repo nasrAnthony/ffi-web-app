@@ -1,0 +1,145 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    .batch-meta {
+      margin: 0 0 24px;
+      padding: 16px 18px;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .batch-meta p {
+      margin: 0 0 8px;
+    }
+    .batch-preview-list {
+      display: grid;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+    .batch-preview-item {
+      border: 1px solid #d0d7de;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+    .batch-preview-item__head {
+      padding: 16px 18px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f8fafc;
+    }
+    .batch-preview-item__head h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .batch-preview-item__meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .batch-preview-item__pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .batch-preview-item__text {
+      margin: 0;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .batch-preview-frame {
+      width: 100%;
+      min-height: 760px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    <div class="batch-meta">
+      <p><strong>Schema version:</strong> {{ batch.schema_version|default:"Not provided" }}</p>
+      <p><strong>Business:</strong> {{ batch.business_name|default:"Not provided" }}</p>
+      <p><strong>Location:</strong> {{ batch.business_location|default:"Not provided" }}</p>
+      <p><strong>Uploaded default status:</strong> {{ batch.batch_status }}</p>
+      <p><strong>Posts in batch:</strong> {{ batch.posts|length }}</p>
+      <p><strong>Import behavior:</strong> All posts will be published when you confirm this batch.</p>
+    </div>
+
+    <div class="batch-preview-list">
+      {% for post in batch.posts %}
+        <section class="batch-preview-item">
+          <div class="batch-preview-item__head">
+            <h2>{{ post.title }}</h2>
+            <div class="batch-preview-item__meta">
+              <span class="batch-preview-item__pill">Will publish</span>
+              <span class="batch-preview-item__text">Slug: {{ post.slug }}</span>
+              <span class="batch-preview-item__text">{{ post.read_time_minutes }} minute{{ post.read_time_minutes|pluralize }} read</span>
+              <span class="batch-preview-item__text">{{ post.section_count }} section{{ post.section_count|pluralize }}</span>
+            </div>
+          </div>
+          <iframe
+            class="batch-preview-frame"
+            src="{{ page_preview_url }}?batch_index={{ forloop.counter0 }}"
+            title="Preview for {{ post.title }}"
+            loading="lazy"
+            data-batch-preview-frame
+          ></iframe>
+        </section>
+      {% endfor %}
+    </div>
+
+    <form method="post" action="{{ confirm_url }}">
+      {% csrf_token %}
+      <div class="submit-row">
+        <input type="submit" value="Confirm and publish" class="default">
+        <a href="{{ cancel_url }}" class="button cancel-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      const frames = Array.from(document.querySelectorAll("[data-batch-preview-frame]"));
+      if (!frames.length) return;
+
+      function resizeFrame(frame) {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+        const height = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight
+        );
+        frame.style.height = height + "px";
+      }
+
+      frames.forEach(function (frame) {
+        frame.addEventListener("load", function () {
+          resizeFrame(frame);
+
+          const frameWindow = frame.contentWindow;
+          if (frameWindow && frameWindow.ResizeObserver) {
+            const observer = new frameWindow.ResizeObserver(function () {
+              resizeFrame(frame);
+            });
+            observer.observe(frame.contentDocument.body);
+          }
+        });
+      });
+    })();
+  </script>
+{% endblock %}

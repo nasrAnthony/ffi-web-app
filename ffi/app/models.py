@@ -1,25 +1,32 @@
 from pathlib import Path
 
 from django.db import models
-from django.db.models.signals import post_delete, pre_save
-from django.dispatch import receiver
 from django.template.defaultfilters import slugify
 
 
 def blog_image_upload_to(instance, filename):
     extension = Path(filename).suffix.lower() or ".jpg"
-    base_slug = instance.slug or slugify(instance.title) or "blog-entry"
+    base_slug = getattr(instance, "slug", "") or slugify(getattr(instance, "title", "")) or "blog-entry"
     return f"blog/{base_slug}{extension}"
 
 
 class BlogPost(models.Model):
+    class Status(models.TextChoices):
+        DRAFT = "draft", "Draft"
+        PUBLISHED = "published", "Published"
+
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     summary = models.TextField(
         blank=True,
         help_text="Optional short summary shown on the main blog hub.",
     )
-    main_image = models.ImageField(upload_to=blog_image_upload_to, blank=True, null=True)
+    status = models.CharField(
+        max_length=20,
+        choices=Status.choices,
+        default=Status.PUBLISHED,
+    )
+    read_time_minutes = models.PositiveSmallIntegerField(default=5)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -71,25 +78,3 @@ class BlogSection(models.Model):
 
     def __str__(self):
         return f"{self.post.title} - {self.heading}"
-
-
-@receiver(pre_save, sender=BlogPost)
-def delete_replaced_blog_image(sender, instance, **kwargs):
-    if not instance.pk:
-        return
-
-    try:
-        old_instance = BlogPost.objects.get(pk=instance.pk)
-    except BlogPost.DoesNotExist:
-        return
-
-    old_image = old_instance.main_image
-    new_image = instance.main_image
-    if old_image and old_image != new_image:
-        old_image.delete(save=False)
-
-
-@receiver(post_delete, sender=BlogPost)
-def delete_blog_image_on_remove(sender, instance, **kwargs):
-    if instance.main_image:
-        instance.main_image.delete(save=False)

@@ -1,0 +1,195 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    .blog-admin-preview-shell {
+      margin: 28px 0 12px;
+      border: 1px solid #d0d7de;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 36px rgba(17, 39, 61, 0.08);
+    }
+    .blog-admin-preview-label {
+      padding: 14px 18px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f8fafc;
+      color: #0f2a43;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .blog-admin-preview-frame {
+      width: 100%;
+      min-height: 900px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+  </style>
+{% endblock %}
+
+{% block after_related_objects %}
+  {{ block.super }}
+
+  <section class="blog-admin-preview-shell" aria-label="Blog post preview" data-blog-admin-preview>
+    <div class="blog-admin-preview-label">Live Site Preview</div>
+    <iframe
+      class="blog-admin-preview-frame"
+      src="{{ page_preview_url }}"
+      title="Live blog preview"
+      loading="lazy"
+      data-preview-frame
+    ></iframe>
+  </section>
+
+  <script>
+    (function () {
+      const frame = document.querySelector("[data-preview-frame]");
+      if (!frame) return;
+
+      const titleInput = document.getElementById("id_title");
+      const readTimeInput = document.getElementById("id_read_time_minutes");
+      const summaryInput = document.getElementById("id_summary");
+
+      function getSectionRows() {
+        return Array.from(document.querySelectorAll(".inline-related")).filter(function (row) {
+          const deleteCheckbox = row.querySelector("input[type='checkbox'][name$='-DELETE']");
+          return !(deleteCheckbox && deleteCheckbox.checked);
+        });
+      }
+
+      function escapeHtml(value) {
+        return value
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function renderParagraphs(body) {
+        return body
+          .split(/\n\s*\n/)
+          .map(function (paragraph) {
+            const text = paragraph.trim();
+            if (!text) return "";
+            return "<p>" + escapeHtml(text) + "</p>";
+          })
+          .join("");
+      }
+
+      function buildSectionMarkup() {
+        const sections = getSectionRows()
+          .map(function (row) {
+            const orderField = row.querySelector("input[name$='-order']");
+            const headingField = row.querySelector("input[name$='-heading']");
+            const bodyField = row.querySelector("textarea[name$='-body']");
+            return {
+              order: parseInt(orderField && orderField.value, 10) || 0,
+              heading: headingField ? headingField.value.trim() : "",
+              body: bodyField ? bodyField.value.trim() : ""
+            };
+          })
+          .filter(function (section) {
+            return section.heading || section.body;
+          })
+          .sort(function (a, b) {
+            return a.order - b.order;
+          });
+
+        if (!sections.length) {
+          return "" +
+            "<p class='blog-article__empty'>" +
+            "This article is being prepared and will be available soon." +
+            "</p>";
+        }
+
+        return sections.map(function (section, index) {
+          const heading = section.heading || "Untitled section " + (index + 1);
+          const bodyMarkup = renderParagraphs(section.body || "Add body copy to preview this section.");
+          return "" +
+            "<section class='blog-article__section'>" +
+            "<h2>" + escapeHtml(heading) + "</h2>" +
+            bodyMarkup +
+            "</section>";
+        }).join("");
+      }
+
+      function resizeFrame() {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+        const height = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight
+        );
+        frame.style.height = height + "px";
+      }
+
+      function updatePreview() {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+
+        const title = titleInput && titleInput.value.trim();
+        const readTime = readTimeInput && readTimeInput.value.trim();
+        const summary = summaryInput && summaryInput.value.trim();
+
+        const titleValue = title || "Untitled blog post";
+        const readTimeValue = (readTime || "5") + " minute read";
+
+        const titleNode = doc.querySelector("[data-preview-title]");
+        const readTimeNode = doc.querySelector("[data-preview-read-time]");
+        const summaryNode = doc.querySelector("[data-preview-summary]");
+        const sectionsNode = doc.querySelector("[data-preview-sections]");
+        const articleNode = doc.querySelector("[data-preview-article]");
+
+        if (titleNode) titleNode.textContent = titleValue;
+        if (readTimeNode) readTimeNode.textContent = readTimeValue;
+        if (articleNode) articleNode.setAttribute("aria-label", titleValue);
+        doc.title = titleValue + " - Family First Insurance";
+
+        if (summaryNode) {
+          if (summary) {
+            summaryNode.textContent = summary;
+            summaryNode.hidden = false;
+          } else {
+            summaryNode.textContent = "";
+            summaryNode.hidden = true;
+          }
+        }
+
+        if (sectionsNode) {
+          sectionsNode.innerHTML = buildSectionMarkup();
+        }
+
+        resizeFrame();
+      }
+
+      frame.addEventListener("load", function () {
+        updatePreview();
+
+        const frameWindow = frame.contentWindow;
+        if (frameWindow && frameWindow.ResizeObserver) {
+          const observer = new frameWindow.ResizeObserver(function () {
+            resizeFrame();
+          });
+          observer.observe(frame.contentDocument.body);
+        }
+      });
+
+      document.addEventListener("input", function (event) {
+        if (event.target.closest("form")) {
+          updatePreview();
+        }
+      });
+
+      document.addEventListener("change", function (event) {
+        if (event.target.closest("form")) {
+          updatePreview();
+        }
+      });
+    })();
+  </script>
+{% endblock %}

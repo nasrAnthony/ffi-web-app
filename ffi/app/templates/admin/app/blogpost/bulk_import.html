@@ -1,0 +1,18 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <div id="content-main">
+    <p>Upload a JSON file matching the blog batch schema. Nothing is saved until you confirm the preview on the next screen.</p>
+
+    <form method="post" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+      <fieldset class="module aligned">
+        {{ form.as_p }}
+      </fieldset>
+      <div class="submit-row">
+        <input type="submit" value="Preview batch" class="default">
+        <a href="{{ back_url }}" class="button cancel-link">Back to blog posts</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

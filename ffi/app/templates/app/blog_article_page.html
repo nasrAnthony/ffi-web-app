@@ -3,19 +3,15 @@
 
 {% block title %}{{ article.title }} - Family First Insurance{% endblock %}
 {% block meta_description %}{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}{% endblock %}
+{% block meta_robots %}{% if preview_mode %}noindex,nofollow{% else %}index,follow{% endif %}{% endblock %}
 {% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}
 {% block head_extra %}
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{ article.title }} - Family First Insurance" />
   <meta property="og:description" content="{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}" />
   <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-  {% if article.main_image %}
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}" />
-    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}" />
-  {% else %}
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
-    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
-  {% endif %}
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
+  <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ article.title }} - Family First Insurance" />
   <meta name="twitter:description" content="{{ article.summary|default:article.card_summary|striptags|truncatechars:160 }}" />
@@ -39,48 +35,79 @@
           "@type": "ImageObject",
           "url": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}"
         }
-      }{% if article.main_image %},
-      "image": [
-        "{{ request.scheme }}://{{ request.get_host }}{{ article.main_image.url }}"
-      ]{% endif %}
+      }
     }
   </script>
+  {% if preview_mode %}
+    <style>
+      .hero-section,
+      .blog-entry-page-root > .hero-content {
+        display: none !important;
+      }
+
+      main {
+        padding-top: 0 !important;
+      }
+
+      .blog-entry-page-root {
+        padding-top: 0 !important;
+      }
+
+      .blog-entry-page-root .after-hero-bg {
+        padding-top: 1.5rem;
+      }
+
+      a,
+      button,
+      input,
+      select,
+      textarea,
+      .nav-toggle,
+      .submenu-toggle,
+      .nav-link {
+        pointer-events: none !important;
+      }
+    </style>
+  {% endif %}
 {% endblock %}
 
 {% block content %}
-  <div class="hero-content">
-    <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
-    <h1 class="reveal reveal--hero" data-anim="down" data-duration="2500">{{ article.title }}</h1>
-  </div>
+  <div class="contact-page-root blog-entry-page-root">
+    <div class="hero-content">
+      <img class="reveal reveal--hero hero-logo" src="{% static 'images/logo.png' %}" alt="Family First Insurance" loading="eager" decoding="async" />
+    </div>
 
-  <section class="after-hero-bg">
+    <section class="after-hero-bg">
     <div class="after-hero-surface">
-      <article class="blog-article reveal" data-anim="up" data-duration="900" aria-label="{{ article.title }}">
+      <article class="blog-article reveal" data-anim="up" data-duration="900" aria-label="{{ article.title }}" data-preview-article>
         <div class="container blog-article__wrap">
-          <a href="/resources/blog/" class="blog-back-link">‹ Back to blog</a>
+          <a href="/resources/blog/" class="blog-back-link" data-preview-back-link>Back to blog</a>
 
-          <div class="blog-article__hero">
-            {% if article.main_image %}
-              <img src="{{ article.main_image.url }}" alt="{{ article.title }}" />
-            {% else %}
-              <div class="blog-article__hero-fallback" aria-hidden="true"></div>
-            {% endif %}
-          </div>
-
-          <div class="blog-article__content">
+          <div class="blog-article__content" data-preview-content>
+            <header class="blog-article__header">
+              <h1 class="blog-article__title" data-preview-title>{{ article.title }}</h1>
+              <div class="blog-article__meta-row">
+                <p class="blog-article__meta">{{ article.created_at|date:"F j, Y" }}</p>
+                <span class="blog-article__tag" data-preview-read-time>{{ article.read_time_minutes }} minute read</span>
+              </div>
+            </header>
             {% if article.summary %}
-              <p class="blog-article__lead">{{ article.summary }}</p>
+              <p class="blog-article__lead" data-preview-summary>{{ article.summary }}</p>
+            {% else %}
+              <p class="blog-article__lead" data-preview-summary hidden></p>
             {% endif %}
-            {% for section in article.sections.all %}
-              <section class="blog-article__section">
-                <h2>{{ section.heading }}</h2>
-                {{ section.body|linebreaks }}
-              </section>
-            {% empty %}
-              <p class="blog-article__empty">
-                This article is being prepared and will be available soon.
-              </p>
-            {% endfor %}
+            <div data-preview-sections>
+              {% for section in article.sections.all %}
+                <section class="blog-article__section">
+                  <h2>{{ section.heading }}</h2>
+                  {{ section.body|linebreaks }}
+                </section>
+              {% empty %}
+                <p class="blog-article__empty">
+                  This article is being prepared and will be available soon.
+                </p>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </article>
@@ -92,5 +119,6 @@
         </div>
       </section>
     </div>
-  </section>
+    </section>
+  </div>
 {% endblock %}

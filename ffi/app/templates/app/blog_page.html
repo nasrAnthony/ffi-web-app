@@ -60,15 +60,14 @@
             {% for article in articles %}
               <article class="blog-card">
                 <a href="/resources/blog/{{ article.slug }}/" class="blog-card__link" aria-label="Read {{ article.title }}">
-                  <div class="blog-card__media">
-                    {% if article.main_image %}
-                      <img src="{{ article.main_image.url }}" alt="{{ article.title }}" />
-                    {% else %}
-                      <div class="blog-card__media-fallback" aria-hidden="true"></div>
-                    {% endif %}
+                  <div class="blog-card__brand" aria-hidden="true">
+                    <img src="{% static 'images/logo.png' %}" alt="" />
                   </div>
                   <div class="blog-card__body">
-                    <p class="blog-card__meta">{{ article.created_at|date:"F j, Y" }}</p>
+                    <div class="blog-card__meta-row">
+                      <p class="blog-card__meta">{{ article.created_at|date:"F j, Y" }}</p>
+                      <span class="blog-card__tag">{{ article.read_time_minutes }} minute read</span>
+                    </div>
                     <h3 class="blog-card__title">{{ article.title }}</h3>
                     <p class="blog-card__summary">{{ article.card_summary }}</p>
                     <span class="blog-card__cta">Read article <span aria-hidden="true">›</span></span>

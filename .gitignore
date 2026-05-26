@@ -2,3 +2,5 @@
 __pycache__/
 secrets/
 .venv/
+blog-readme.md
+blog-automation-readme.md
