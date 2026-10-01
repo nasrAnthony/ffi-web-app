@@ -29,6 +29,10 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
 RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_SECRET_KEY")
 
+# Gunicorn is reached through an Nginx Unix socket in production, so
+# REMOTE_ADDR can be empty. Resolve the client address from proxy headers.
+RATELIMIT_IP_META_KEY = "app.ratelimit.client_ip"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
 
