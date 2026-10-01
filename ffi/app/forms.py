@@ -5,6 +5,15 @@ from django_recaptcha.widgets import ReCaptchaV2Checkbox
 from .models import BlogPost
 
 class ContactForm(forms.Form):
+    website = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput(attrs={
+            "autocomplete": "off",
+            "tabindex": "-1",
+            "aria-hidden": "true",
+        }),
+    )
+
     name = forms.CharField(
         label="Full name",
         max_length=120,
@@ -69,6 +78,12 @@ class ContactForm(forms.Form):
         }),
     )
     captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
+
+    def clean_website(self):
+        website = self.cleaned_data.get("website")
+        if website:
+            raise forms.ValidationError("Invalid submission.")
+        return website
 
 
 class BlogBatchUploadForm(forms.Form):

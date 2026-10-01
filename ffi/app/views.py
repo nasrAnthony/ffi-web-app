@@ -3,16 +3,33 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django_ratelimit.decorators import ratelimit
 
 from .forms import ContactForm
 from .models import BlogPost
 from .gmail_api import send_contact_emails
 # Create your views here.
 
+CONTACT_FORM_RATE = "5/h"
+CONTACT_FORM_RATE_MESSAGE = (
+    "Too many contact form submissions. Please wait a bit before trying again."
+)
+
 #base page...
+@ratelimit(
+    group="contact-form",
+    key="ip",
+    rate=CONTACT_FORM_RATE,
+    method="POST",
+    block=False,
+)
 def home(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
+        if getattr(request, "limited", False):
+            messages.error(request, CONTACT_FORM_RATE_MESSAGE)
+            return render(request, "app/home_page.html", {"form": form}, status=429)
+
         if form.is_valid():
             data = form.cleaned_data
             ctx = {
@@ -122,9 +139,20 @@ def blog_article_view(request, slug):
 INTERNAL_CONTACT = settings.INTERNAL_CONTACT
 FROM_IDENTITY    = settings.DEFAULT_FROM_EMAIL
 
+@ratelimit(
+    group="contact-form",
+    key="ip",
+    rate=CONTACT_FORM_RATE,
+    method="POST",
+    block=False,
+)
 def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
+        if getattr(request, "limited", False):
+            messages.error(request, CONTACT_FORM_RATE_MESSAGE)
+            return render(request, "app/contact_page.html", {"form": form}, status=429)
+
         if form.is_valid():
             data = form.cleaned_data
 
